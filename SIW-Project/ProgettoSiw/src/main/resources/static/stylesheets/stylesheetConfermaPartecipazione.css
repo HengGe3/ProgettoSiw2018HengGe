@@ -93,6 +93,25 @@
       min-height:100%;  margin: 0 auto; 
 }
 
+#amministratore button{
+position: relative;
+      left: 300px;
+      top: 100px;
+      width: 200px;
+      height: 50px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-size: 22px;
+      text-decoration: none;
+      background: #004080;
+      color: white;
+      font-weight: normal;
+      border-radius: 0px 0px 0px 0px;
+      border-width: 1px;
+      border-style: normal;
+      z-index:5;
+      min-height:100%;  margin: 0 auto; 
+}
 /***************************************************************************************/
 
 

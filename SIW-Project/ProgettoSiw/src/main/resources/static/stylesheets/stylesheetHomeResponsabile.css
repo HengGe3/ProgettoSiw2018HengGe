@@ -748,7 +748,7 @@ button {
 	font-size: 0.80em;
 }
 
-.extra2 .ebox1, .extra2 .ebox2 {
+.extra2 .ebox1, .extra2 .ebox2, .extra2 .ebox3, .extra2 .ebox4 {
 	width: 560px;
 }
 
@@ -759,5 +759,15 @@ button {
 }
 
 .extra2 .ebox2 {
+	float: right;
+}
+
+.extra2  .ebox3 {
+	float: left;
+	padding-right: 40px;
+	border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.extra2 .ebox4 {
 	float: right;
 }

@@ -53,8 +53,8 @@ public class CentroFormazioneService {
 			return null;
 	}
 
-	public Set<CentroFormazione> findAll() {
-		return (Set<CentroFormazione>) this.centroRepository.findAll();
+	public List<CentroFormazione> findAll() {
+		return (List<CentroFormazione>) this.centroRepository.findAll();
 	}
 
 	// Metodi di supporto

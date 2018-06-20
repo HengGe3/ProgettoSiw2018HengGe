@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Attivita</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div>
+		<h4 class="title">Dati Attivita</h4>
+		<div>
+			Descrizione : <span th:text="${attivita.descrizione}"></span>
+		</div>
+		<div>
+			Prezzo : <span th:text="${attivita.prezzo}"></span>
+		</div>
+		<div>
+			Data : <span th:text="${attivita.dataAttivita}"></span>
+		</div>
+		<div>
+			Ora Inizio : <span th:text="${attivita.oraInizio}"></span>
+		</div>
+		<div>
+			Ora Fine : <span th:text="${attivita.oraFine}"></span>
+		</div>
+		<div>
+			Centro Formazione : <span th:text="${attivita.centroFormazione}"></span>
+		</div>
+		<p>Allievi che vi partecipano</p>
+		<div>
+			<span>Nome : </span>
+		</div>
+		<div>
+			<div th:each="attivita : ${listaAllievi}">
+				<a th:href="@{'/findattivitaId' + '/' + ${attivita.id}}"> <span
+					th:text="${attivita.nome}"></span> <span
+					th:text="${attivita.cognome}"></span>
+				</a>
+		</div>
+		<br>
+		<form th:action="@{'/deleteAttivita' + '/' + ${attivita.id}}" method="POST">
+			<button type="submit">Conferma Cancellazione</button>
+		</form>
+		<form th:action="@{/homeGestione}">
+			<button type="submit">Annulla Cancellazione</button>
+		</form>
+	</div>
+</body>
+</html>

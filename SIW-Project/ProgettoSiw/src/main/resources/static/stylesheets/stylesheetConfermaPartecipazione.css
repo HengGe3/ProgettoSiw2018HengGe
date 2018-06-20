@@ -1,0 +1,110 @@
+#inizio {
+      position: relative;
+      left: 50%;
+      top: 0%;
+}
+
+
+
+#inizio .title {
+      position: relative;
+      left: -640px;
+      top: 150px;
+      width: 1500px;
+      height:160px;
+      font-family: Palatino;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      color: black;
+      background-image:url(operazione.jpg); 
+      background-size: 490px 100px;
+      background-position: 700px -11px;
+      background-repeat: no-repeat;
+      
+}
+
+/******************************************************************************************/
+
+#dati {
+      position: relative;
+      left: 5%;
+      top: 120px;
+}
+
+
+#dati div{
+  width: 500px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 21px;
+  color:grey;
+}
+
+#dati h2{
+  width: 300px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 41px;
+  color:black;
+}
+
+
+#dati button{
+	 position: relative;
+      left: 0px;
+      top: 1030px;
+      width: 200px;
+      height: 50px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-size: 22px;
+      text-decoration: none;
+      background: #004080;
+      color: white;
+      font-weight: normal;
+      border-radius: 0px 0px 0px 0px;
+      border-width: 1px;
+      border-style: normal;
+      z-index:5;
+}
+
+/****************************************************************************************/
+
+#back button{
+	 position: relative;
+      left: 300px;
+      top: 1100px;
+      width: 200px;
+      height: 50px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-size: 22px;
+      text-decoration: none;
+      background: #004080;
+      color: white;
+      font-weight: normal;
+      border-radius: 0px 0px 0px 0px;
+      border-width: 1px;
+      border-style: normal;
+      z-index:5;
+      min-height:100%;  margin: 0 auto; 
+}
+
+/***************************************************************************************/
+
+
+body{
+        background-image: url(universitari.jpg);
+        background-repeat: no-repeat;
+        background-position: 20px 50px; 
+        position: left; 
+        background-size: 100%;
+        margin:0;
+}
+
+html, body {height:100%; }
+
+

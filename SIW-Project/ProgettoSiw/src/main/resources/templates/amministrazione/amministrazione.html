@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Amministrazione</title>
+</head>
+<body>
+	<h4>Amministrazione</h4>
+	Sei loggato come
+	<div>
+		Username : <span th:text="${responsabile.username}"></span>
+	</div>
+	<form th:action="@{/logout}">
+		<button type="submit">Logout</button>
+	</form>
+	<br>
+
+	<form th:action="@{/homeAllievo}" method="GET">
+		<button type="submit">Gestione Allievo</button>
+	</form>
+	<form th:action="@{/pagamento}" method="GET">
+		<button type="submit">Pagamento Allievo</button>
+	</form>
+	<form th:action="@{/homeCentroFormazione}" method="GET">
+		<button type="submit">Gestione Centri Formazione</button>
+	</form>
+	<form th:action="@{/homeAttivita}" method="GET">
+		<button type="submit">Gestione Attivita</button>
+	</form>
+	<form th:action="@{/statistiche}" method="GET">
+		<button type="submit">Statistiche</button>
+	</form>
+</body>
+</html>

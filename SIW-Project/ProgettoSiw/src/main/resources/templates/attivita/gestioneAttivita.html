@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Gestione Attivita</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h4 class="title">Gestione Attivita</h4>
+	Sei loggato come
+	<div>
+		Username : <span th:text="${responsabile.username}"></span>
+	</div>
+	<form th:action="@{/logout}">
+		<button type="submit">Logout</button>
+	</form>
+	<br>
+
+	<form th:action="@{/inserisciAttivita}">
+		<button type="submit">Inserisci Nuova Attivita</button>
+	</form>
+	<form th:action="@{/cercaAttivita}">
+		<button type="submit">Cerca Attivita</button>
+	</form>
+	<form th:action="@{/listaAttivita}">
+		<button type="submit">Lista Tutti Attivita</button>
+	</form>
+	<form th:action="@{/homeGestione}">
+		<button type="submit">Home</button>
+	</form>
+</body>
+</html>

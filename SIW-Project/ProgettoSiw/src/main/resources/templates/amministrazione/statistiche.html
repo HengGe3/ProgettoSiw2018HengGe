@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8">
+<title>Statistiche</title>
+</head>
+<body>
+	<h4>Statistiche Azienda</h4>
+	<table>
+		<tr>
+			<th>Centro Formazione</th>
+			<th>Numero Allievi</th>
+		</tr>
+		<tr th:each="centroFormazione : ${partecipantiCentri}">
+			<td th:text="'Centro ' + ${centroFormazione.key.nome}"></td>
+			<td th:text="${centroFormazione.value}"></td>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<tr>
+			<th>Centro Formazione</th>
+			<th>Ricevi Per Centro</th>
+		</tr>
+		<tr th:each="centroFormazione : ${ricaviCentro}">
+			<td th:text="'Centro ' + ${centroFormazione.key.nome}"></td>
+			<td th:text="'€ : ' + ${centroFormazione.value}"></td>
+		</tr>
+	</table>
+	<br>
+	<form th:action="@{/homeGestione}" method="GET">
+		<button type="submit">Amministrazione</button>
+	</form>
+	<!-- <div>
+		<div th:each="centroFormazione : ${partecipantiCentri}">
+			Centro : <span th:text="${centroFormazione.key.nome}"></span> <span
+				th:text="${centroFormazione.value}"></span>
+		</div>
+	</div> -->
+</body>
+</html>

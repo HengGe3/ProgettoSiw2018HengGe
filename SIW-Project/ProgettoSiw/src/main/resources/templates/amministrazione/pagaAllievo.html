@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Pagamento</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h4 class="title">Dati Allievo</h4>
+	<div>
+		Nome : <span th:text="${allievo.nome}"></span>
+	</div>
+	<div>
+		Cognome : <span th:text="${allievo.cognome}"></span>
+	</div>
+	<div>
+		Email : <span th:text="${allievo.email}"></span>
+	</div>
+	<div>
+		Telefono : <span th:text="${allievo.telefono}"></span>
+	</div>
+	<div>
+		Data di Nascita : <span th:text="${allievo.dataNascita}"></span>
+	</div>
+	<div>
+		Luogo di Nascita : <span th:text="${allievo.luogoNascita}"></span>
+	</div>
+	<p>Lista delle Attivita</p>
+
+	<div>
+		<div th:each="attivita : ${listaAttivita}">
+			<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}"> <span
+				th:text="${attivita.descrizione}"></span> Il <span
+				th:text="${attivita.dataAttivita}"></span> Dalle <span
+				th:text="${attivita.oraInizio}"></span> Alle <span
+				th:text="${attivita.oraFine}"></span> € <span
+				th:text="${attivita.prezzo}"></span>
+			</a>
+
+		</div>
+	</div>
+	<br>
+	<div>
+		Totale Importo Dovuto : <span th:text="${allievo.importoDovuto}"></span>
+	</div>
+	<br>
+	<form th:action="@{'/effettuaPagamento' + '/' + ${allievo.id}}" method="POST">
+		<button type="submit">Effettua Pagamento</button>
+	</form>
+	<form th:action="@{/pagamento}" method="GET">
+		<button type="submit">Torna a Pagamento Allievo</button>
+	</form>
+	<form th:action="@{/homeGestione}" method="GET">
+		<button type="submit">Home Amministratore</button>
+	</form>
+</body>
+</html>

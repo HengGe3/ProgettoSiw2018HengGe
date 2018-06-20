@@ -1,0 +1,212 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>newFindAllievo</title>
+
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/animate.css">
+	<link href="/stylesheets/animate.min.css" rel="stylesheet"> 
+	<link href="/stylesheets/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>	
+	<header id="header">
+        
+                   			
+               
+							
+    </header><!--/header-->	
+	
+	<div class="slider">		
+		<div id="about-slider">
+			<div id="carousel-slider" class="carousel slide" >
+				
+
+				<div class="carousel-inner">
+					<div class="item active">						
+						<img src="stylesheets/cerca3.jpg" class="img-responsive" alt=""> 
+						<div class="carousel-caption">
+							<div class="wow fadeInUp"  >								
+								<h2><span>Cerca tra i nostri Allievi!</span></h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" >								
+									
+								</div>
+							</div>
+							<div class="wow fadeInUp" >								
+								<form class="form-inline">
+									
+									<div class="form-group">
+										
+									</div>
+								</form>
+							</div>
+						</div>
+				    </div>
+			
+				    
+				    
+				</div>
+				
+				
+			</div> <!--/#carousel-slider-->
+		</div><!--/#about-slider-->
+	</div><!--/#slider-->
+	
+	<div class="about">
+		<div class="container">
+			<div class="text-center">
+				<h2>Scegli un Allievo e Iscrivi / Modifica! </h2>
+				<div class="col-md-10 col-md-offset-1">
+					<h4>Qui di seguito troverai una lista dei nostri Allievi: scegline uno, 
+					   selezionalo, inizia la gestione del tuo Allievo. In alternativa usa
+					   il campo di ricerca per email in fondo alla pagina.</h4>
+				</div>
+				
+			</div>	
+		</div>			
+	</div>
+	<hr>
+	
+	<div class="services">
+		<div class="container">
+			<div class="text-center">
+				<h2>Allievi</h2>
+			</div>
+			<div class="col-md-3 wow fadeInDown" >
+				<ul th:each="allievo : ${listaAllievi}">
+					<li> <a th:href="@{'/findAllievoId' + '/' + ${allievo.id}}">
+					<span th:text="${allievo.nome}"></span>
+					<span th:text="${allievo.cognome}"></span>
+			</a></li>
+			
+	</ul>
+			</div>
+			
+		</div>			
+	</div>
+	
+	<section class="action">
+		<div class="container">
+		<img src="stylesheets/cerca1.jpg" alt="" class="img-responsive"/>
+			<div class="left-text hidden-xs">
+				<h4>La preparazione dei nostri Allievi è importante</h4>
+				<p><em>I nostri Allievi sono preparati secondo tecniche studiate da Roboto University</em><br><br>Studiando a contatto con esperti, i nostri ragazzi imparano a trovare la loro strada...</p>
+			</div>
+			<div class="right-image hidden-xs"></div>
+		</div>
+	</section>
+	
+	<div class="gallery">
+		<div class="text-center">
+			<h2>Gallery</h2>
+			<p>La nostra scelta per il futuro</p>
+		</div>
+		<div class="container">		
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="stylesheets/cerca.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>I Ragazzi</h4>
+						<p>Sono la nostra Ispirazione</p>				
+					</figcaption>			
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="stylesheets/cerca4.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>I nostri Ragazzi</h4>
+						<p>Sono la nostra Famiglia</p>				
+					</figcaption>			
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="stylesheets/cerca8.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>I nostri ragazzi</h4>
+						<p>Sono la nostra Casa</p>				
+					</figcaption>			
+				</figure>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="stylesheets/cerca5.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>I nostri ragazzi</h4>
+						<p>portano Allegria</p>				
+					</figcaption>			
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="stylesheets/cerca6.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>I nostri ragazzi</h4>
+						<p>La nostra soddisfazione</p>				
+					</figcaption>			
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="stylesheets/cerca7.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>I nostri ragazzi</h4>
+						<p>I cui sogni sono importanti</p>				
+					</figcaption>			
+				</figure>
+			</div>
+		</div>
+	</div>
+		
+	<footer>
+	
+	
+		<div id="findallievo">
+	 <div id="inizio">
+		<h1 class="title">Ricerca un Allievo :</h1>
+		<p th:text="${notexists}"></p>
+	</div>
+
+
+	<!-- Genera il form con il campo di inserimento dell'email per la ricerca di un Allievo-->
+		<form id="Find" th:action="@{/findAllievo}" method="GET">
+          
+          <!--Genera la maschera con il campo di inserimento dell'email -->
+          <fieldset>
+
+            <input id="email" name="email" placeholder="Email" required><br>
+            <span th:text=" ${errorParam}"></span>
+
+		<button id="email" class="button" type="submit" style="background:red">Cerca</button>
+            
+          </fieldset>
+			
+	</form>		
+	
+	</div>
+			
+	</footer>
+	
+	
+    	
+    
+  </body>
+</html>

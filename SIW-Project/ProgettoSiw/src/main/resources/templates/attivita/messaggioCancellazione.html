@@ -1,0 +1,16 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Cancellazione</title>
+</head>
+<body>
+	<h4>Allievo Cancellato con Successo</h4>
+	<form th:action="@{/homeAttivita}" method="GET">
+		<button type="submit">Gestione Attivita</button>
+	</form>
+	<form th:action="@{/homeGestione}">
+		<button type="submit">Home Centro Formazione</button>
+	</form>
+</body>
+</html>

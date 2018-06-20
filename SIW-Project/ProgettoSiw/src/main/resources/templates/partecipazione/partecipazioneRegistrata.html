@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Partecipazione Registrata</title>
+<link rel="stylesheet" href="/stylesheets/stylesheetPartecipazioneRegistrata.css" type="text/css" />
+
+</head>
+
+
+<body>
+
+	<div id="inizio">
+		<h1 class="title">Partecipazione dell'Allievo Confermata!</h1>
+	</div>
+	
+	<div id="dati">
+	
+	<div>
+		Nome : <span th:text="${allievo.nome}"></span>
+	</div>
+	<div>
+		Cognome : <span th:text="${allievo.cognome}"></span>
+	</div>
+	
+	
+	<h2>Dati Attivita :</h2>
+	<div>
+		Descrizione : <span th:text="${attivita.descrizione}"></span>
+	</div>
+	<div>
+		Prezzo : <span th:text="${attivita.prezzo}"></span>
+	</div>
+	<div>
+		Data : <span th:text="${attivita.dataAttivita}"></span>
+	</div>
+	<div>
+		Ora Inizio : <span th:text="${attivita.oraInizio}"></span>
+	</div>
+	<div>
+		Ora Fine : <span th:text="${attivita.oraFine}"></span>
+	</div>
+	<div>
+		Centro Formazione : <span th:text="${attivita.centroFormazione}"></span>
+	</div>
+	</div>
+	
+	<form th:action="@{/homeGestione}" method="GET">
+		<button type="submit">Home Amministratore</button>
+	</form>
+	
+</body>
+
+</html>

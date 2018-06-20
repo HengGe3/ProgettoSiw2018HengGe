@@ -1,0 +1,15 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Pagamento Effettuato</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<p th:text="${pagato}"/>
+	<p th:text="${nonPagato}"/>
+	<form th:action="@{/homeGestione}" method="GET">
+		<button type="submit">Amministrazione</button>
+	</form>
+</body>
+</html>

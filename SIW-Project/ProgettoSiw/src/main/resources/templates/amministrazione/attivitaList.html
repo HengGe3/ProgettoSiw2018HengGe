@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>attivitaList</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/stylesheets/stylesheetattivitaList.css"
+	type="text/css" />
+</head>
+<body>
+	<div id="window">
+		<div id="title">
+			<h4 class="inizio">Le nostre Attività:</h4>
+		</div>
+		<div id="scelta">
+			<div th:each="attivita : ${listaAttivita}">
+				<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}">
+					<span th:text="${attivita.descrizione}"></span>
+					Il <span th:text="${attivita.dataAttivita}"></span>
+					Dalle <span th:text="${attivita.oraInizio}"></span>
+					Alle <span th:text="${attivita.oraFine}"></span>
+					€ <span th:text="${attivita.prezzo}"></span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<form th:action="@{/inserisciAttivita}">
+		<button type="submit">Inserisci Nuovo Attivita</button>
+	</form>
+	<form th:action="@{/homeAttivita}" method="GET">
+		<button type="submit">Gestione Attivita</button>
+	</form>
+	<form th:action="@{/homeGestione}">
+		<button type="submit">Home Centro Formazione</button>
+	</form>
+</body>
+</html>

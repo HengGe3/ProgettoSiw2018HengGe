@@ -1,0 +1,105 @@
+#inizio {
+      position: relative;
+      left: 50%;
+      top: 0%;
+}
+
+
+
+#inizio .title {
+      position: relative;
+      left: -190px;
+      top: 100px;
+      width: 800px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      color: #ffffff;
+      
+}
+
+
+/**************************************************************************************/
+
+
+#Find {
+      position: relative;
+      left: 50%;
+      top: 12px;
+}
+
+
+#Find body {
+  position: relative;
+  font-family: 'Palatino Linotype', serif;
+  margin-top: 190px;
+  max-width: 550px;
+  max-height: 100px;
+  padding: 50px 220px;
+  border-style: none;
+}
+
+
+
+#Find fieldset {
+  position: relative;  
+  left: -200px;
+  top: 95px;
+  margin-bottom: 15px;
+  padding: 10px; 
+  width: 300px;
+  border: 1px solid black ;
+  border-radius: 8px;
+  background: #f1f1f1;
+
+}
+
+/******************************************************************************************/
+
+body{
+        background-image: url(cerca.jpg);
+        background-repeat: no-repeat;
+        background-position: 10px 10px; 
+        position: left; 
+        background-size: 1300px 700px;
+        z-index:100;
+}
+
+/******************************************************************************************/
+
+
+#lista{
+	position: relative;
+      left: 5%;
+      top: 600px;
+}
+
+
+#lista .title{
+  width: 300px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 41px;
+  color:black;
+}
+
+
+#lista ul{
+  width: 300px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 41px;
+  color:black;
+}
+
+html, body{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+

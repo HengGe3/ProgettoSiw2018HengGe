@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+		<title>Home</title> 
+		<link rel="stylesheet" href="stylesheets/stylesheetaccesso.css" type="text/css" />
+		<meta charset="utf-8">
+	</head>
+	<body >
+	 <div id="nota">
+      
+        <p >Digiti i suoi dati di accesso e selezioni l'icona Accesso.</p>
+        <p th:text="${noEsiste}" />
+		<p th:text="${noLogin}" />
+		<p th:text="${logout}" />
+        
+      </div>
+        <!--   Genera il form con i campi di inserimento dei dati di accesso -->
+		<form id="Utenti" name="f" th:action="@{/login}" method="get">
+		
+          <!--   Genera la maschera con i campi di inserimento dei dati di accesso -->
+          <fieldset>
+           <legend>I SUOI DATI DI ACCESSO</legend>
+            <label>Username : </label><input type="text" name="username" />
+					<span th:text=" ${errorParam}"></span><br>
+            <label>Password : </label><input type="password" name="password" />
+					<span th:text=" ${errorParam}"></span><br>
+            <button type="submit" class="btn">Log in</button>
+          </fieldset>
+          
+         </form>
+       <!--   
+         <! Genera il form per cambiare la username e la password >
+		 <form id="verificadati" action="pscript/modificadati.php" method="post" onsubmit="return verificapersona()">
+		          <p >Pu&ograve cambiare i suoi dati personali che ha fornito
+		                                  all'atto dell'iscrizione. Scriva i suoi dati di accesso nei campi a destra per
+		                                  accedere alla pagina di modifica dei dati.</p>
+		          <fieldset>
+		           <label for="username">User Name</label>
+                   <input id="user" type="text" maxlength= "30" name="User" ><br>
+		           <label for="pass" >Password</label>
+                   <input id="pass" type= "password" maxlength="20" name="Pass" ><br>
+                  </fieldset id="cambiapassword">
+
+                        <input name="Pass_client" type="hidden">
+
+                 		<h1 class="accedi"><input onclick="Pass_client.value = hex_sha1(Pass.value)" type="submit" value="Accedi"></h1>
+
+         </form>    -->
+
+	</body>
+</html>

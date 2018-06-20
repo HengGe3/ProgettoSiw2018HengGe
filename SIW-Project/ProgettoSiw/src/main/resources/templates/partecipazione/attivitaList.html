@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Lista Attivita</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div>
+		<h4>Registra partecipazione Allievo</h4>
+		<p th:text="${centroFull}"></p>
+	</div>
+	<div>
+		<p>Scegli tra le Attivita :</p>
+		<p th:text="${esiste}"></p>
+	</div>
+	<div>
+		<div th:each="attivita : ${listaAttivita}">
+			<a th:href="@{'/confermaPartecipazione' + '/' + ${attivita.id}}">
+				<span th:text="${attivita.descrizione}"></span> Il <span
+				th:text="${attivita.dataAttivita}"></span> Dalle <span
+				th:text="${attivita.oraInizio}"></span> Alle <span
+				th:text="${attivita.oraFine}"></span>
+			</a>
+		</div>
+	</div>
+	<br>
+	<form th:action="@{/homeGestione}">
+		<button type="submit">Home Amministrazione</button>
+	</form>
+</body>
+</html>

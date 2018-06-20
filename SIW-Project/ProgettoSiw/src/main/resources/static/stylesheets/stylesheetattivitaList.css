@@ -1,0 +1,76 @@
+#title{
+	 position: relative;
+      left:0%;
+      top: 0%;
+}
+
+#title .inizio{
+	position: relative;
+      left: 410px;
+      top: 10px;
+      width: 800px;
+      font-family: Palatino;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 35px;
+      color: black;
+}
+
+/******************************************************************************/
+
+
+#window{
+	position: relative;
+      left:0%;
+      top: 0%;
+}
+
+#window{
+	position: relative;
+      left: 310px;
+      top: 10px;
+      width: 800px;
+      border: 6px solid black;
+      border-width: thin;
+      background-color: #c0c0c0;
+      color: black;
+}
+
+#window .inizio{
+	position: relative;
+      left: 200px;
+      top: 10px;
+      width: 800px;
+      font-family: Palatino;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 35px;
+      color: black;
+}
+
+/***************************************************************************/
+
+#scelta{
+	position: relative;
+      left:50%;
+      top: 0%;
+}
+
+/****************************************************************************/
+
+
+#window {
+        background-image: url(Attivita.jpg);
+      	background-repeat: no-repeat;
+     	background-position: center;
+      	padding-top:40px;
+}
+
+
+html, body{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}

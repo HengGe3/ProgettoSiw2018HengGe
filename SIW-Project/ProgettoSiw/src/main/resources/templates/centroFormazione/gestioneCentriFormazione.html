@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Gestione Centri Formazione</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h4 class="title">Gestione Centri Formazione</h4>
+	Sei loggato come
+	<div>
+		Username : <span th:text="${responsabile.username}"></span>
+	</div>
+	<form th:action="@{/logout}">
+		<button type="submit">Logout</button>
+	</form>
+	<br>
+	<h4 class="title">Cerca Centro Formazione</h4>
+	<p th:text="${notexists}"></p>
+	<form th:action="@{/findCentroFormazione}" method="GET">
+		<table>
+			<tr>
+				<td>Nome :</td>
+				<td><input type="text" name="nome" /><span
+					th:text=" ${errorParam}"></span></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Cerca Centro Formazione</button></td>
+			</tr>
+		</table>
+	</form>
+	<div>
+		<table>
+			<tr>
+				<th>Nome :</th>
+			</tr>
+			<tr th:each="centroFormazione : ${listaCentriFormazione}">
+				<td><a
+					th:href="@{'/findCentroFormazioneId' + '/' + ${centroFormazione.id}}">
+						Centro : <span th:text="${centroFormazione.nome}"></span> Via : <span
+						th:text="${centroFormazione.indirizzo}"></span>
+				</a></td>
+			</tr>
+		</table>
+	</div>
+	<form th:action="@{/homeGestione}" method="GET">
+		<button type="submit">Home</button>
+	</form>
+</body>
+</html>

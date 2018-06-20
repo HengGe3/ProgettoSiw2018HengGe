@@ -1,0 +1,169 @@
+
+ 
+ 
+ #inizio {
+      position: relative;
+      left: 50%;
+      top: 0%;
+}
+
+
+
+#inizio .iscritto {
+      position: relative;
+      left: -170px;
+      top: 10px;
+      width: 800px;
+      font-family: Palatino;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      color: black;
+}
+
+
+
+
+/********************************/
+
+ #campi {
+      position: relative;
+      left: 25%;
+      top: 5px;
+}
+
+
+#campi p{
+  width: 500px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 21px;
+  border: 2px solid black ;
+  border-radius: 20px;
+  background: #c0c0c0;
+}
+
+
+
+#listaAttivita{
+	position: relative;
+      left: 25%;
+      top: 5px;
+}
+
+#listaAttivita{
+  width: 500px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 21px;
+  border: 2px solid black ;
+  border-radius: 20px;
+  background: #c0c0c0;
+}
+
+
+/*********************************************************/
+
+
+#dati{
+	position: relative;
+      left:0%;
+      top: 5px;
+}
+
+
+#dati p{
+	 position: relative;
+      top: -570px;
+      width: 180px;
+      left: 100px;
+      margin:5px 0 -5px 0;
+      padding:15px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+      background-color:#004080;
+      text-align: justify;  
+}
+
+
+
+/**********************************************************/
+
+#partecipa, #modifica, #cancella, #home{
+	position: relative;
+      left: 50%;
+      top: 0%;
+}
+
+#partecipa button, #modifica button, #cancella button, #home button{
+	 position: relative;
+      left: -370px;
+      top: 400px;
+      width: 200px;
+      height: 50px;
+      float: left;
+      font-family: Helvetica;
+      font-style: normal;
+      font-size: 22px;
+      text-decoration: none;
+      background: #004080;
+      color: white;
+      font-weight: normal;
+      border-radius: 0px 0px 0px 0px;
+      border-width: 1px;
+      border-style: normal;
+      z-index:5;
+}
+
+
+/*********************************************************/
+
+/* presenta l'immagine di background della pagina Allievo */	
+
+body {
+        background-image: url(allievo.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 3%; 
+        position: relative; 
+}
+
+
+a:hover {
+     text-decoration: underline;
+}
+
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+#copyright {
+	overflow: hidden;
+	padding: 6em 0em 10em 0em;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#copyright p {
+	letter-spacing: 0.20em;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.80em;
+	color: #004080;
+}
+
+#copyright a {
+	text-decoration: none;
+	color: #004080;
+}
+
+html, body{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}

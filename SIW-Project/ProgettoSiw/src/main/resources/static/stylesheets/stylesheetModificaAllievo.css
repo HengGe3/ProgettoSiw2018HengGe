@@ -1,0 +1,211 @@
+
+ 
+ 
+ #inizio {
+      position: relative;
+      left: 50%;
+      top: 0%;
+}
+
+
+
+#inizio .iscritto {
+      position: relative;
+      left: -170px;
+      top: 10px;
+      width: 800px;
+      font-family: Palatino;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      color: black;
+}
+
+
+
+
+/********************************/
+
+ #campi {
+      position: relative;
+      left: 50%;
+      top: 5px;
+}
+
+
+
+
+/* definisce la larghezza e il padding top e left dei fields I TUOI DATI DI ACCESSO e EMAIL  */
+#campi body {
+  position: relative;
+  font-family: 'Palatino Linotype', serif;
+  margin-top: 190px;
+  max-width: 550px;
+  max-height: 100px;
+  padding: 50px 220px;
+  border-style: none;
+}
+
+
+
+#campi fieldset {
+  position: relative;  
+  left: -290px;
+  top: -15px;
+  margin-bottom: 15px;
+  padding: 10px; 
+  width: 300px;
+  
+  border-style: none;
+}
+
+
+
+
+#campi input, textarea {
+  width: 400px;
+  height: 20px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  font-size: 21px;
+  	 border: 1px solid black ;
+    border-radius: 8px;
+	background: #f1f1f1;
+}
+
+
+
+
+
+
+#campi input[type=submit] {
+  width: 150px;
+  padding: 10px;
+}
+
+
+
+#campi .button {
+      position: relative;
+      left: 10px;
+      top: 50px;
+      width: 200px;
+      height: 50px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-size: 22px;
+      text-decoration: none;
+      background: #004080;
+      color: white;
+      font-weight: normal;
+      border-radius: 0px 0px 0px 0px;
+      border-width: 1px;
+      border-style: normal;
+      z-index:5;
+}
+
+
+
+/*********************************************************/
+
+
+#dati{
+	position: relative;
+      left:0%;
+      top: 5px;
+}
+
+
+#dati p{
+	 position: relative;
+      top: -570px;
+      width: 180px;
+      left: 100px;
+      margin:5px 0 -5px 0;
+      padding:15px;
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+      background-color:#004080;
+      text-align: justify;  
+}
+
+
+
+/**********************************************************/
+
+#partecipa, #modifica, #cancella, #home{
+	position: relative;
+      left: 50%;
+      top: 0%;
+}
+
+#partecipa button, #modifica button, #cancella button, #home button{
+	 position: relative;
+      left: -370px;
+      top: 400px;
+      width: 200px;
+      height: 50px;
+      float: left;
+      font-family: Helvetica;
+      font-style: normal;
+      font-size: 22px;
+      text-decoration: none;
+      background: #004080;
+      color: white;
+      font-weight: normal;
+      border-radius: 0px 0px 0px 0px;
+      border-width: 1px;
+      border-style: normal;
+      z-index:5;
+}
+
+
+/*********************************************************/
+
+/* presenta l'immagine di background della pagina Allievo */	
+
+body {
+        background-image: url(allievo.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 3%; 
+        position: relative; 
+}
+
+
+a:hover {
+     text-decoration: underline;
+}
+
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+#copyright {
+	overflow: hidden;
+	padding: 6em 0em 10em 0em;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#copyright p {
+	letter-spacing: 0.20em;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.80em;
+	color: #004080;
+}
+
+#copyright a {
+	text-decoration: none;
+	color: #004080;
+}
+
+html, body{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}

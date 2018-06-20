@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Centro Formazione</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div>
+		<h4 class="title">Centro Formazione</h4>
+		<div>
+			Nome : <span th:text="${centroFormazione.nome}"></span>
+		</div>
+		<div>
+			Indirizzo : <span th:text="${centroFormazione.indirizzo}"></span>
+		</div>
+		<div>
+			Email : <span th:text="${centroFormazione.email}"></span>
+		</div>
+		<div>
+			Telefono : <span th:text="${centroFormazione.telefono}"></span>
+		</div>
+		<div>
+			Capienza Massima : <span th:text="${centroFormazione.capienzaMassima}"></span>
+		</div>
+		<br>
+		<form th:action="@{'/modificaCentroFormazione' + '/' + ${centroFormazione.id}}" method="GET" >
+			<button type="submit">Modifica Centro Formazione</button></form>
+		<form th:action="@{/homeGestione}" method="GET">
+			<button type="submit">Gestione Centri Formazione</button></form>
+	</div>
+</body>
+</html>

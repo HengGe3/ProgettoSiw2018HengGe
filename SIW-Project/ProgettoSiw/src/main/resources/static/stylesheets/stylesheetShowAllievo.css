@@ -3,45 +3,28 @@
  
  #inizio {
       position: relative;
-      left: 50%;
+      left: 0%;
       top: 0%;
 }
 
 
 
-#inizio .iscritto {
-      position: relative;
-      left: -170px;
-      top: 10px;
-      width: 800px;
-      font-family: Palatino;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 40px;
-      color: black;
-}
-
-
-
-
 /********************************/
 
- #campi {
+ #show {
       position: relative;
-      left: 25%;
+      left: 0%;
       top: 5px;
 }
 
 
-#campi p{
+#show div{
   width: 500px;
   height: 20px;
   padding: 15px;
   margin: 5px 0 22px 0;
   font-size: 21px;
-  border: 2px solid black ;
-  border-radius: 20px;
-  background: #c0c0c0;
+  
 }
 
 
@@ -96,14 +79,14 @@
 
 #partecipa, #modifica, #cancella, #home{
 	position: relative;
-      left: 50%;
+      left: 0%;
       top: 0%;
 }
 
 #partecipa button, #modifica button, #cancella button, #home button{
 	 position: relative;
-      left: -370px;
-      top: 400px;
+      left: 2%;
+      top: 10%;
       width: 200px;
       height: 50px;
       float: left;
@@ -128,7 +111,8 @@
 body {
         background-image: url(allievo.jpg);
         background-repeat: no-repeat;
-        background-position: 50% 3%; 
+        background-position: 80% 40%; 
+        background-size: 70% 70%;
         position: relative; 
 }
 
@@ -160,10 +144,3 @@ a:hover {
 	color: #004080;
 }
 
-html, body{
-    position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-}

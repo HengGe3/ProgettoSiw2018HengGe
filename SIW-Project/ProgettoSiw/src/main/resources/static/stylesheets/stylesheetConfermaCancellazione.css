@@ -1,0 +1,17 @@
+body {
+  position: relative;
+  font-family: 'Palatino Linotype', serif;
+  margin-top: 190px;
+  max-width: 550px;
+  max-height: 100px;
+  padding: 50px 220px;
+  border-style: none;
+  left:15%;
+  top:-190px;
+}
+
+#messaggio{
+	border-style: solid;
+	text-align: center;
+	background:#c0c0c0;
+}

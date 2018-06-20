@@ -31,7 +31,7 @@ public class PartecipazioneService {
 
 	public Set<Attivita> getListaAttivita(Allievo allievo) {
 		Set<Attivita> listaAttivita = new HashSet<>();
-		for (Partecipazione partecipazione : allievo.getListaPartecipazione())
+		for (Partecipazione partecipazione : allievo.getListaPartecipazioni())
 			listaAttivita.add(partecipazione.getAttivita());
 		return listaAttivita;
 	}
@@ -45,7 +45,7 @@ public class PartecipazioneService {
 
 	public Set<Attivita> getListaAttivitaNonPagata(Allievo allievo) {
 		Set<Attivita> listaAttivita = new HashSet<>();
-		for (Partecipazione partecipazione : allievo.getListaPartecipazione()) {
+		for (Partecipazione partecipazione : allievo.getListaPartecipazioni()) {
 			if (!partecipazione.isPagato())
 				listaAttivita.add(partecipazione.getAttivita());
 		}

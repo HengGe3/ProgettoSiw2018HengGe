@@ -91,7 +91,7 @@ public class AttivitaService {
 
 	public List<Attivita> getListaAttivitaPossibili(Allievo allievoCorrente) {
 
-		List<Partecipazione> listaPAllievo = allievoCorrente.getListaPartecipazione();
+		List<Partecipazione> listaPAllievo = allievoCorrente.getListaPartecipazioni();
 		List<Attivita> listaAttivitaAllievo = new ArrayList<>();
 
 		for (Partecipazione p : listaPAllievo)

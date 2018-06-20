@@ -43,7 +43,7 @@ public class Allievo {
 	private double importoDovuto;
 
 	@OneToMany(mappedBy = "allievo")
-	private List<Partecipazione> listaPartecipazione;
+	private List<Partecipazione> listaPartecipazioni;
 
 	public Allievo() {
 	}
@@ -106,12 +106,12 @@ public class Allievo {
 		this.luogoNascita = luogoNascita;
 	}
 
-	public List<Partecipazione> getListaPartecipazione() {
-		return listaPartecipazione;
+	public List<Partecipazione> getListaPartecipazioni() {
+		return listaPartecipazioni;
 	}
 
-	public void setListaAttivita(List<Partecipazione> listaPartecipazione) {
-		this.listaPartecipazione = listaPartecipazione;
+	public void setListaPartecipazioni(List<Partecipazione> listaPartecipazione) {
+		this.listaPartecipazioni = listaPartecipazione;
 	}
 
 	public Long getId() {

@@ -57,7 +57,7 @@ public class AmmistrazioneController {
 	@RequestMapping(value = "/effettuaPagamento/{id}", method = RequestMethod.POST)
 	public String effettuaPagamento(@PathVariable("id") Long id, Model model) {
 		if (this.allievoService.findById(id).getImportoDovuto() > 0) {
-			for (Partecipazione p : this.allievoService.findById(id).getListaPartecipazione())
+			for (Partecipazione p : this.allievoService.findById(id).getListaPartecipazioni())
 				p.setPagato(true);
 			this.allievoService.aggiornaImporto(this.allievoService.findById(id));
 			model.addAttribute("pagato", "Pagamento effettuato con successo");

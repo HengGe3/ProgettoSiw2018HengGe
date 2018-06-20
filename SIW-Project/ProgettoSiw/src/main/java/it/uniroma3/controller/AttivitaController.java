@@ -1,5 +1,6 @@
 package it.uniroma3.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.validation.Valid;
@@ -35,6 +36,8 @@ public class AttivitaController {
 
 	final private String prefix = "attivita/";
 
+	private Attivita attivita;
+
 	public String showAttivita(Model model, Attivita attivita) {
 		model.addAttribute("attivita", attivita);
 		if (this.partecipazioneService.getListaAllievi(attivita) != null)
@@ -59,8 +62,8 @@ public class AttivitaController {
 		return attivitaForm();
 	}
 
-	@RequestMapping(value = "/saveAttivita", method = RequestMethod.POST)
-	public String saveAttivita(@Valid @ModelAttribute("attivita") Attivita attivita, Model model,
+	@RequestMapping(value = "/confermaAttivita", method = RequestMethod.POST)
+	public String confermaAttivita(@Valid @ModelAttribute("attivita") Attivita attivita, Model model,
 			BindingResult bindingResult) {
 		this.validator.validate(attivita, bindingResult);
 		if (!bindingResult.hasErrors()) {
@@ -69,13 +72,23 @@ public class AttivitaController {
 				model.addAttribute("exists", "Attivita esiste gia'");
 				return attivitaForm();
 			} else {
-				attivita.setCentroFormazione(Progettosiw.getRsc().getCentroFormazione());
-				this.attivitaService.save(attivita);
+				this.attivita = attivita;
+				this.attivita.setCentroFormazione(Progettosiw.getRsc().getCentroFormazione());
 				model.addAttribute("attivita", attivita);
-				return this.prefix + "showAttivita";
+				return this.prefix + "confermaAttivita";
 			}
 		}
 		return attivitaForm();
+	}
+
+	@RequestMapping(value = "/saveAttivita", method = RequestMethod.POST)
+	public String saveAttivita(Model model) {
+		attivita.setCentroFormazione(Progettosiw.getRsc().getCentroFormazione());
+		this.attivita.setListaPartecipazioni(new ArrayList<>());
+		this.attivitaService.save(this.attivita);
+		model.addAttribute("attivita", this.attivita);
+		model.addAttribute("listaAllievi", this.attivita.getListaPartecipazioni());
+		return showAttivita(model, this.attivita);
 	}
 
 	@RequestMapping(value = "/findAttivita")

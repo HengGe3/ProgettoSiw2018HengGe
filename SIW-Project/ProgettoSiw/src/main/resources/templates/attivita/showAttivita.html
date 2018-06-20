@@ -4,10 +4,15 @@
 <head>
 <title>Attivita</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/stylesheets/stylesheetShowAllievo.css"
+	type="text/css" />
 </head>
 <body>
-	<div>
-		<h4 class="title">Dati Attivita</h4>
+	<div id="inizio">
+		<h1 class="iscritto">Dati Attivita:</h1>
+	</div>
+
+	<div id="show">
 		<div>
 			Descrizione : <span th:text="${attivita.descrizione}"></span>
 		</div>
@@ -26,23 +31,37 @@
 		<div>
 			Centro Formazione : <span th:text="${attivita.centroFormazione}"></span>
 		</div>
-		<p>Allievi che vi partecipano</p>
-		<div>
-			<span>Nome : </span>
-		</div>
-		<div>
+
+		<div>Lista dei Partecipanti : </div>
+		<div id="showLista">
 			<div th:each="allievo : ${listaAllievi}">
-				<a th:href="@{'/findAllievoId' + '/' + ${allievo.id}}">
-					<span th:text="${allievo.nome}"></span>
-					<span th:text="${allievo.cognome}"></span>
-				</a></div>
+				<a th:href="@{'/findAllievoId' + '/' + ${allievo.id}}"> <span
+					th:text="${allievo.nome}"></span> <span
+					th:text="${allievo.cognome}"></span>
+				</a>
+			</div>
 		</div>
-		<br>
-		<form th:action="@{'/modificaAttivita' + '/' + ${attivita.id}}"><button type="submit">Modifica Attivita</button></form>
-		<form th:action="@{'/cancellaAttivita' + '/' + ${attivita.id}}"><button type="submit">Cancella Attivita</button></form>
-		<form th:action="@{/inserisciAttivita}"><button type="submit">Inserisci Nuovo Attivita</button></form>
-		<form th:action="@{/listaAttivita}" method="GET"><button type="submit">Lista Tutti Attivita</button></form>
-		<form th:action="@{/homeAttivita}" method="GET"><button type="submit">Gestione Attivita</button></form>
 	</div>
+	<br>
+
+	<br>
+	<form id="cancella"
+		th:action="@{'/cancellaAttivita' + '/' + ${attivita.id}}">
+		<button type="submit">Cancella Attivita</button>
+	</form>
+	<form id="modifica"
+		th:action="@{'/modificaAttivita' + '/' + ${attivita.id}}">
+		<button type="submit">Modifica Attivita</button>
+	</form>
+	<form id="cancella" th:action="@{/inserisciAttivita}">
+		<button type="submit">Inserisci Nuovo Attivita</button>
+	</form>
+	<form id="cancella" th:action="@{/listaAttivita}" method="GET">
+		<button type="submit">Lista Tutti Attivita</button>
+	</form>
+	<form id="home" th:action="@{/homeGestione}">
+		<button type="submit">Home</button>
+	</form>
+
 </body>
 </html>

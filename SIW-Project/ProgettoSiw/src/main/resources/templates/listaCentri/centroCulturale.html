@@ -1,0 +1,98 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<!--
+HomePage del Responsabile: qui il responsabile può scegliere se gestire le attività gestire nuovi allievi.
+
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Centro Culturale</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- Link agli stylesheet per questa pagina html -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link
+	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+	rel="stylesheet" />
+<link href="/stylesheets/stylesheetHomeResponsabile.css" rel="stylesheet"
+	type="text/css" media="all" />
+<link href="/stylesheets/fontsHomeResponsabile.css" rel="stylesheet"
+	type="text/css" media="all" />
+
+</head>
+<body>
+	<div id="header-wrapper">
+		<div id="header" class="container">
+
+
+
+			<!-- Sezione logo e collegamento alla pagina dei contatti. -->
+			<div id="logo">
+				<h1>
+					<span class="fa fa-bars"></span><a>Home</a>
+				</h1>
+			</div>
+			<div id="menu">
+				<ul>
+					<li>Sei loggato come <span th:text="${responsabile.username}"></span>
+   				</ul>
+				<ul>
+					<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+				</ul>
+				<ul>
+					<li><a th:href="@{/logout}" accesskey="5" title="">Torna alla pagina
+							di Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="wrapper">
+		<div id="featured-wrapper">
+			<div id="featured" class="extra2 margin-btm container">
+				<div class="main-title">
+					<h2>Centro Culturale</h2>
+					<span></span>
+				</div>
+
+
+
+
+				<!-- Sezione per la gestione degli allievi del centro. -->
+				<div class="ebox1">
+					<span class="fa fa-pagelines"></span>
+					<div class="title">
+						<h2>Gestisci Allievi</h2>...
+						
+							 <form th:action="@{/inserisciAllievo}"><button type="submit">Iscrivi Allievo</button></form>...
+							 <form th:action="@{/listaAllievi}"><button type="submit">Cerca dati Allievo/Lista Allievi del Centro</button></form>...
+							 <form th:action="@{/pagamento}"><button type="submit">Pagamenti</button></form> 
+							 
+					</div>
+				</div>
+				<!-- Sezione per la gestione delle attività del centro. -->
+				<div class="ebox2">
+					<span class="fa fa-anchor"></span>
+					<div class="title">
+						<h2>Gestisci Attività</h2>...
+						
+							<form  th:action="@{/inserisciAttivita}"><button type="submit">Inserisci una nuova Attività </button></form>...
+							<form th:action="@{/listaAttivita}"><button type="submit">Cerca una Attività/Lista Attività del Centro. </button></form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- note di copyright -->
+	<div id="copyright" class="container">
+		<p>&copy; Roboto. All rights reserved.</p>
+	</div>
+</body>
+</html>

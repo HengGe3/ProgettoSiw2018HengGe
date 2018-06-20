@@ -50,7 +50,7 @@ public class AllievoService {
 		List<Allievo> ai = (List<Allievo>) this.allievoRepository.findAll();
 		List<Allievo> listaAllievi = new ArrayList<>();
 		for (Allievo a : ai)
-			for (Partecipazione p : a.getListaPartecipazione())
+			for (Partecipazione p : a.getListaPartecipazioni())
 				if (p.getAttivita().getCentroFormazione().equals(Progettosiw.getRsc().getCentroFormazione()))
 					if (!listaAllievi.contains(a))
 						listaAllievi.add(a);
@@ -82,7 +82,7 @@ public class AllievoService {
 	public void aggiornaImporto(Allievo allievo) {
 		Optional<Allievo> a = this.allievoRepository.findById(allievo.getId());
 		double importo = 0;
-		for (Partecipazione p : a.get().getListaPartecipazione())
+		for (Partecipazione p : a.get().getListaPartecipazioni())
 			if (!p.isPagato())
 				importo = importo + p.getAttivita().getPrezzo();
 		a.get().setImportoDovuto(importo);

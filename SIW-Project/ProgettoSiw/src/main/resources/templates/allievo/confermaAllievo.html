@@ -27,8 +27,8 @@
 			Luogo di Nascita : <span th:text="${allievo.luogoNascita}"></span>
 		</div>
 		<br>
-		<form th:action="@{'/salvaAllievo'}" method="POST" th:object="${allievo}"><button type="submit">Modifica Allievo</button></form>
-		<form th:action="@{'/saveAllievo' + '/' + ${allievo.id}}" method="POST" th:object="${allievo}"><button type="submit">Salva Allievo</button></form>
+		<form th:action="@{/saveAllievo}" method="POST"><button type="submit">Salva Allievo</button></form>
+		<form th:action="@{/inserisciAllievo}"><button type="submit">Cancella Registrazione</button></form>
 	</div>
 </body>
 </html>

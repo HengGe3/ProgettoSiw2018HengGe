@@ -12,7 +12,7 @@
 		<p th:text="${exists}"></p>
        </div>
         <!-- Genera il form con i campi di inserimento dei dati per l'iscrizione di un nuovo Allievo-->
-		<form id="Persone" th:action="@{/saveAttivita}" method="POST" th:object="${attivita}">
+		<form id="Persone" th:action="@{/confermaAttivita}" method="POST" th:object="${attivita}">
           
           <!--Genera la maschera con i campi di inserimento dei dati di accesso di autore -->
           <fieldset>
@@ -32,9 +32,9 @@
           </fieldset>
           
          </form>
-     <form id="back" th:action="@{/homeAttivita}">
-		<button  type="submit">Home</button>
-	</form>    
+     <form id="back" th:action="@{/homeGestione}">
+		<button type="submit">Home</button>
+	</form>
   
   	 <div id="fine">
   	 

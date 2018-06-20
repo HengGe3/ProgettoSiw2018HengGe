@@ -58,7 +58,7 @@ public class PartecipazioneController {
 	@RequestMapping(value = "/savePartecipazione", method = RequestMethod.POST)
 	public String savePartecipazione(Model model) {
 		Partecipazione partecipazione = new Partecipazione(this.allievoCorrente, this.attivitaCorrente);
-		this.allievoCorrente.getListaPartecipazione().add(partecipazione);
+		this.allievoCorrente.getListaPartecipazioni().add(partecipazione);
 		this.partecipazioneService.save(partecipazione);
 		this.allievoService.aggiornaImporto(this.allievoCorrente);
 		model.addAttribute("attivita", this.attivitaCorrente);
@@ -87,7 +87,7 @@ public class PartecipazioneController {
 		Partecipazione p = this.partecipazioneService.findByAllievoAndAttivita(this.allievoCorrente,
 				this.attivitaCorrente);
 		this.partecipazioneService.delete(p.getId());
-		this.allievoCorrente.getListaPartecipazione().remove(p);
+		this.allievoCorrente.getListaPartecipazioni().remove(p);
 		return this.prefix + "messaggioCancellazione";
 	}
 	

@@ -37,6 +37,8 @@ public class AllievoController {
 
 	final private String prefix = "allievo/";
 
+	private Allievo allievo;
+
 	public String showAllievo(Model model, Allievo allievo) {
 		this.allievoService.aggiornaImporto(allievo);
 		model.addAttribute("responsabile", Progettosiw.getRsc());
@@ -44,7 +46,7 @@ public class AllievoController {
 		model.addAttribute("listaAttivita", this.partecipazioneService.getListaAttivita(allievo));
 		return this.prefix + "showAllievo";
 	}
-	
+
 	@RequestMapping("/homeAllievo")
 	public String homeAllievo(Model model) {
 		model.addAttribute("responsabile", Progettosiw.getRsc());
@@ -63,9 +65,9 @@ public class AllievoController {
 		model.addAttribute("allievo", new Allievo());
 		return allievoForm(model);
 	}
-
+	
 	// Persistence Allievo
-	@RequestMapping(value = "/saveAllievo", method = RequestMethod.POST)
+	@RequestMapping(value = "/confermaAllievo", method = RequestMethod.POST)
 	public String nuovoAllievo(@Valid @ModelAttribute("allievo") Allievo allievo, Model model,
 			BindingResult bindingResult) {
 		this.validator.validate(allievo, bindingResult);
@@ -75,12 +77,21 @@ public class AllievoController {
 				model.addAttribute("exists", "Allievo esiste gia'");
 				return allievoForm(model);
 			} else {
-				allievo.setListaAttivita(new ArrayList<Partecipazione>());
-				this.allievoService.save(allievo);
-				return showAllievo(model, allievo);
+				this.allievo = allievo;
+				model.addAttribute("allievo", allievo);
+				return this.prefix + "confermaAllievo";
 			}
 		}
 		return allievoForm(model);
+	}
+
+	@RequestMapping(value = "/saveAllievo", method = RequestMethod.POST)
+	public String saveAllievo(Model model) {
+		allievo.setListaPartecipazioni(new ArrayList<>());
+		this.allievoService.save(this.allievo);
+		model.addAttribute("allievo", this.allievo);
+		model.addAttribute("listaAttivita", allievo.getListaPartecipazioni());
+		return showAllievo(model, this.allievo);
 	}
 
 	// Search Allievo Email
@@ -91,11 +102,11 @@ public class AllievoController {
 			if (allievo == null) {
 				model.addAttribute("notexists", "Allievo non esiste");
 				return listaAllievi(model);
-			} else 
+			} else
 				return showAllievo(model, allievo);
 		}
 		model.addAttribute("errorParam", "Inserisci Email");
-		return listaAllievi(model );
+		return listaAllievi(model);
 	}
 
 	// Search Allievo tramite ID

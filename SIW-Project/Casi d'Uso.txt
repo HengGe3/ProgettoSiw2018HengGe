@@ -4,23 +4,22 @@ PROGETTO:
 Se una persona si iscrive ad un centro,se è iscritto ad un altro centro,le sue credenziali vengono recuperate.
 Due utenti:responsabili del centro,gestore del centro(non allievo).
 
-	 v UC 1 : Gestione Allievo - Attore primario: Responsabile Centro E/O Direttore
+	 UC 1 : Gestione Allievo - Attore primario: Responsabile Centro E/O Direttore
 		1. Un Allievo si reca per la prima volta ad un Centro e richiede l' iscrizione.
 		2. Il Responsabile chiede all' Allievo i dati necessari per la prima iscrizione : nome, cognome,
 			email, telefono, data e luogo di nascita.
 		3. Il Responsabile inserisce i dati nel sistema e registra l' Allievo all' Azienda che gestisce i Centri.
-			3.1 Visualizza una solamente la lista di Allievi presenti nel suo Centro, se è un Responsabile
+			3.1 Se è un Responsabile, visualizza solamente la lista di Allievi che partecipano a qualche Attivita presente nel suo Centro, Altrimenti tutta la lista
 		4. Il Responsabile puo anche modificare i dati di un Allievo.
 		5. Il Responsabile puo anche cancellare i dati di un Allievo.
 
 	UC 2 : Gestione Iscrizione Attività – Attore primario : Responsabile Centro
-		
 		1. Il Responsabile Centro accede al sistema e trova i dati dell' Allievo.
 			1.1 O tramite Lista di tutti gli allievi o tramite ricerca per email.
 		2. Il Responsabile informa l' Allievo delle Attività disponibili.
-			2.1 Vengono stampate una lista di Attivita disponibile per l' Allievo
+			2.1 Viene stampata una lista di Attivita disponibile per l' Allievo
 				2.1.1 Escluse quelle a cui l' Allievo è gia iscritto, 
-				e in caso di login da parte di un Determinato Responsabile Centro, questi visualizzera solo le sue Attività
+				e in caso di login da parte di un determinato Responsabile Centro, questi visualizzera solo le sue Attività.
 		4. Il Responsabile iscrive l' Allievo all' Attività scelta.
 			4.1 Se il Centro dell' Attività scelta risulta piena, Manderaà un messaggio d' errore e la possibilità di scegliere un' altra Attività
 			4.2 Verranno visualizzati i dati di conferma.
@@ -35,13 +34,11 @@ Due utenti:responsabili del centro,gestore del centro(non allievo).
 
 	UC 5 : Gestione Rendimento Azienda - Attore Primario : Direttore
 		1. Viene stampato per ogni Centro Formazione il numero di partecipanti
-		2. Viene stampato la classifica (per ricavi) delle Attività di un Centro.
-			2.1 Relativa a ogni Attività, stampare anche il numero di partecipanti.
-		3. Viene stampa la classifica per ricavi dei Centri dell' Azienda.
+		2. Viene stampato per ogni Centro Formazione il ricavo Complessivo.
 
 	UC 6 : Gestione Pagamento - Attore Primario : Direttore
       		1. Il Direttore usa il sistema per controllare se l' Allievo del centro ha pagato correttamente 
-			il prezzo (mensile) delle attività a cui è iscritto.
+			il prezzo delle attività a cui è iscritto.
 		2. Il Direttore chiede all'allievo di pagare il prezzo delle Attività non pagate.
 		3. L' Allievo paga ciò che è richiesto.
 		4. Il Direttore usa il sistema per saldare il debito.

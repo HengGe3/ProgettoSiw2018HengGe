@@ -42,7 +42,7 @@
 		<br>
 		<br>
 		<div>
-			Totale Importo Dovuto : <span th:text="${allievo.importoDovuto}"></span>
+			Totale Importo Dovuto : € <span th:text="${allievo.importoDovuto}"></span>
 		</div>
 		<br>
 		<form th:action="@{'/deleteAllievo' + '/' + ${allievo.id}}"

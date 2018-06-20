@@ -32,7 +32,7 @@
 			Centro Formazione : <span th:text="${attivita.centroFormazione}"></span>
 		</div>
 
-		<div>Lista dei Partecipanti : </div>
+		<div>Lista dei Partecipanti :</div>
 		<div id="showLista">
 			<div th:each="allievo : ${listaAllievi}">
 				<a th:href="@{'/findAllievoId' + '/' + ${allievo.id}}"> <span

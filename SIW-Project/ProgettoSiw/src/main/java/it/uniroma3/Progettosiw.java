@@ -189,7 +189,7 @@ public class Progettosiw {
 		
 		Allievo allievoF = new Allievo();
 		allievoF.setNome("Francesca");
-		allievoF.setCognome("D'Orazio");
+		allievoF.setCognome("Dorazio");
 		allievoF.setDataNascita(new Date());
 		allievoF.setEmail("francescadorazio@gmail.com");
 		allievoF.setTelefono("0687654353");

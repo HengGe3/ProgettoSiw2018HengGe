@@ -4,10 +4,15 @@
 <head>
 <title>Centro Formazione</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/stylesheets/stylesheetShowAllievo.css"
+	type="text/css" />
 </head>
 <body>
-	<div>
-		<h4 class="title">Centro Formazione</h4>
+	<div id="inizio">
+		<h1 class="iscritto">Dati Centro Formazione :</h1>
+	</div>
+
+	<div id="show">
 		<div>
 			Nome : <span th:text="${centroFormazione.nome}"></span>
 		</div>
@@ -24,26 +29,34 @@
 			Capienza Massima : <span
 				th:text="${centroFormazione.capienzaMassima}"></span>
 		</div>
-		<br>
-		<div>Le Sue Attivita</div><br>
-		<div th:each="attivita : ${listaAttivita}">
-			<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}"> <span
-				th:text="${attivita.descrizione}"></span> Il <span
-				th:text="${attivita.dataAttivita}"></span> Dalle <span
-				th:text="${attivita.oraInizio}"></span> Alle <span
-				th:text="${attivita.oraFine}"></span> € <span
-				th:text="${attivita.prezzo}"></span>
-			</a>
+
+		<div>Le Sue Attivita :</div>
+		<div id="showLista">
+			<div th:each="attivita : ${listaAttivita}">
+				<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}"> <span
+					th:text="${attivita.descrizione}"></span> Il <span
+					th:text="${attivita.dataAttivita}"></span> Dalle <span
+					th:text="${attivita.oraInizio}"></span> Alle <span
+					th:text="${attivita.oraFine}"></span> € <span
+					th:text="${attivita.prezzo}"></span>
+				</a>
+			</div>
 		</div>
-		<br>
-		<form
-			th:action="@{'/modificaCentroFormazione' + '/' + ${centroFormazione.id}}"
-			method="GET">
-			<button type="submit">Modifica Centro Formazione</button>
-		</form>
-		<form th:action="@{/homeGestione}" method="GET">
-			<button type="submit">Gestione Centri Formazione</button>
-		</form>
 	</div>
+	<br>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<form id="modifica"
+		th:action="@{'/modificaCentroFormazione' + '/' + ${centroFormazione.id}}"
+		method="GET">
+		<button type="submit">Modifica Centro Formazione</button>
+	</form>
+	<form id="home" th:action="@{/homeGestione}">
+		<button type="submit">Home</button>
+	</form>
+
 </body>
 </html>

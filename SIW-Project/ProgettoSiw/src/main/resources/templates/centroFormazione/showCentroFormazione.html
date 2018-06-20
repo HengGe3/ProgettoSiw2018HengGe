@@ -21,13 +21,29 @@
 			Telefono : <span th:text="${centroFormazione.telefono}"></span>
 		</div>
 		<div>
-			Capienza Massima : <span th:text="${centroFormazione.capienzaMassima}"></span>
+			Capienza Massima : <span
+				th:text="${centroFormazione.capienzaMassima}"></span>
 		</div>
 		<br>
-		<form th:action="@{'/modificaCentroFormazione' + '/' + ${centroFormazione.id}}" method="GET" >
-			<button type="submit">Modifica Centro Formazione</button></form>
+		<div>Le Sue Attivita</div><br>
+		<div th:each="attivita : ${listaAttivita}">
+			<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}"> <span
+				th:text="${attivita.descrizione}"></span> Il <span
+				th:text="${attivita.dataAttivita}"></span> Dalle <span
+				th:text="${attivita.oraInizio}"></span> Alle <span
+				th:text="${attivita.oraFine}"></span> € <span
+				th:text="${attivita.prezzo}"></span>
+			</a>
+		</div>
+		<br>
+		<form
+			th:action="@{'/modificaCentroFormazione' + '/' + ${centroFormazione.id}}"
+			method="GET">
+			<button type="submit">Modifica Centro Formazione</button>
+		</form>
 		<form th:action="@{/homeGestione}" method="GET">
-			<button type="submit">Gestione Centri Formazione</button></form>
+			<button type="submit">Gestione Centri Formazione</button>
+		</form>
 	</div>
 </body>
 </html>

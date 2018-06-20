@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.Progettosiw;
 import it.uniroma3.model.CentroFormazione;
+import it.uniroma3.service.AttivitaService;
 import it.uniroma3.service.CentroFormazioneService;
 
 @Controller
@@ -24,6 +25,7 @@ public class CentroFormazioneController {
 	@RequestMapping(value = "/findCentroFormazioneId/{id}", method = RequestMethod.GET)
 	public String findCentroFormazione(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("centroFormazione", this.centroFormazioneService.findById(id));
+		model.addAttribute("listaAttivita", this.centroFormazioneService.findById(id).getListaAttivita());
 		return this.prefix + "showCentroFormazione";
 	}
 
@@ -38,9 +40,11 @@ public class CentroFormazioneController {
 			if (centroFormazione == null) {
 				model.addAttribute("notexists", "Centro Formazione non esiste");
 				return this.prefix + "findCentroFormazione";
-			} else
+			} else {
 				model.addAttribute("centroFormazione", centroFormazione);
-			return this.prefix + "showCentroFormazione";
+				model.addAttribute("listaAttivita", centroFormazione.getListaAttivita());
+				return this.prefix + "showCentroFormazione";
+			}
 		}
 		model.addAttribute("errorParam", "Inserisci Nome");
 		return this.prefix + "findCentroFormazione";
@@ -77,6 +81,7 @@ public class CentroFormazioneController {
 		this.centroFormazioneService.uploadParametri(CentroFormazione);
 		this.centroFormazioneService.save(CentroFormazione);
 		model.addAttribute("centroFormazione", CentroFormazione);
+		model.addAttribute("", this.centroFormazioneService.findById(id).getListaAttivita());
 		return this.prefix + "showCentroFormazione";
 	}
 

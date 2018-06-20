@@ -16,9 +16,17 @@ body {
 	overflow-x:hidden;
 }
 
+a:link{
+	color:#004080;
+}
+
 hi,h2,h3,h4,h5,h6 {
 	color:#272727;
 	line-height:1.1em;
+}
+
+#email{
+	color:#272727;
 }
 
 p {
@@ -32,7 +40,7 @@ a {
     -webkit-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
     outline: none;
-	color:#272727;
+	color:#000080;
 }
 a:hover {
 	text-decoration: none;
@@ -695,6 +703,8 @@ ul.social_icons li  a i{
 	text-shadow:none;
 	margin-bottom:50px;
 	font-size:24px;
+	 font-weight: bold;
+	 
 }
 
 .services i {
@@ -704,13 +714,18 @@ ul.social_icons li  a i{
 	color:#ddd;
 }
 
-.services h3 {
+.services h2 {
 	margin-bottom:20px;
 	font-size: 16px;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	
  }
+ 
+ 
+ 
+ 
 
 /*===========================
   gallery
@@ -884,7 +899,7 @@ figure.effect-marley:hover p {
 
 .contact-page{
   padding-top: 0;
-  background:#fff;
+  background:#400040;
   margin-bottom:30px;
 }
 
@@ -908,7 +923,7 @@ figure.effect-marley:hover p {
 
 .form-group .form-control {
   padding: 7px 12px;
-  border-color:#f2f2f2;
+  border-color:#400040;
   box-shadow: none;
   border-radius:0;
 }
@@ -932,7 +947,7 @@ footer {
 }
 
 footer p {
-	color:#fff;
+	color:#400040;
 }
 
 footer h4 {
@@ -947,7 +962,7 @@ footer .btn-gamp a {
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	color: #fff;
+	color: #000000;
 	width: 180px;
 	height: 60px;
 	text-align: center;
@@ -961,7 +976,7 @@ footer .btn-gamp a {
 }
 
 footer .btn-gamp a:hover {
-	background:#fff;
+	background:#000000;
 	color:#272727;
 	opacity: 0.8;
 	transition: all 0.5s;
@@ -982,7 +997,7 @@ footer .btn-gamp input {
 }
 
 .contact-info {
-	color:#fff;
+	color:#000000;
 }
 
 .contact-info ul {
@@ -1069,9 +1084,14 @@ ul.social-network li a {
 }
 
 .copyright a {
-	color:#fff;
+	color:#400040;
 	text-transform:uppercase;
 	font-weight:600;
 	font-size:12px;
 	text-shadow:none;
 } 
+
+
+.img-responsive{
+	top:70px;
+}

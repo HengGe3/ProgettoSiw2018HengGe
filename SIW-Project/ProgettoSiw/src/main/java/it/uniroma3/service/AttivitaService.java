@@ -2,8 +2,12 @@ package it.uniroma3.service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -130,6 +134,27 @@ public class AttivitaService {
 
 	public void delete(Long id) {
 		this.attivitaRepository.deleteById(id);
+	}
+
+	public Map<Attivita, Integer> numeroAllieviAttivita() {
+		Map<Attivita, Integer> centro2Integer = new HashMap<>();
+		for (Attivita attivita : this.attivitaRepository.findAll()) {
+			int n = attivita.getListaPartecipazioni().size();
+			centro2Integer.put(attivita, n);
+		}
+		return sortByValue(centro2Integer);
+	}
+
+	public <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+		List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
+		list.sort(Entry.comparingByValue());
+
+		Map<K, V> result = new LinkedHashMap<>();
+		for (Entry<K, V> entry : list) {
+			result.put(entry.getKey(), entry.getValue());
+		}
+
+		return result;
 	}
 
 }

@@ -4,22 +4,27 @@
 <head>
 <title>Pagamento</title>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
 </head>
 <body>
-	<h4>Fattura</h4>
-	<div>
-	<p>Quale Allievo deve effettuare il pagamento?</p>
+	<div id="messaggio">
 		<div>
-			<div th:each="allievo : ${listaAllievi}">
-				<a th:href="@{'/pagaAllievoId' + '/' + ${allievo.id}}">
-					<span th:text="${allievo.nome}"></span>
-					<span th:text="${allievo.cognome}"></span>
-				</a></div>
+			<h4 class="title">Quale Allievo deve effettuare il pagamento?</h4>
+			<div>
+				<div th:each="allievo : ${listaAllievi}">
+					<a th:href="@{'/pagaAllievoId' + '/' + ${allievo.id}}"> <span
+						th:text="${allievo.nome}"></span> <span
+						th:text="${allievo.cognome}"></span>
+					</a>
+				</div>
+				<br>
+			</div>
+			<form th:action="@{/homeGestione}" method="GET">
+				<button type="submit">Home</button>
+			</form>
+			<br>
 		</div>
 	</div>
-	<br>
-	<form th:action="@{/homeGestione}" method="GET">
-		<button type="submit">Home</button>
-	</form>
 </body>
 </html>

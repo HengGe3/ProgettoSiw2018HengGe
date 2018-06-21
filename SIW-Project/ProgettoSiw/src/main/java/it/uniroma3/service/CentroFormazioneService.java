@@ -90,12 +90,6 @@ public class CentroFormazioneService {
 		return centro.getCapienzaMassima() > n;
 	}
 
-	public Map<Allievo, Integer> numeroAllieviAttivita() {
-		Map<Allievo, Integer> allievo2Integer = new HashMap<>();
-		
-		return null;
-	}
-
 	public Map<CentroFormazione, Integer> numeroAllieviCentri() {
 		Map<CentroFormazione, Integer> centro2Integer = new HashMap<>();
 		for (CentroFormazione centro : this.centroRepository.findAll()) {

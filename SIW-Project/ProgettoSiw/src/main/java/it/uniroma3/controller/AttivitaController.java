@@ -45,13 +45,6 @@ public class AttivitaController {
 		return this.prefix + "showAttivita";
 	}
 
-	@RequestMapping(value = "/homeAttivita", method = RequestMethod.GET)
-	public String homeAttivita(Model model) {
-		model.addAttribute("responsabile", Progettosiw.getRsc());
-		model.addAttribute("listaAttivita", this.attivitaService.findAll());
-		return this.prefix + "gestioneAttivita";
-	}
-
 	public String attivitaForm() {
 		return this.prefix + "attivitaForm";
 	}
@@ -135,7 +128,7 @@ public class AttivitaController {
 	public String listaAttivita(Model model) {
 		model.addAttribute("listaAttivita", this.attivitaService.getListaAttivita());
 		model.addAttribute("responsabile", Progettosiw.getRsc());
-		return "amministrazione/attivitaList";
+		return this.prefix + "attivitaList";
 	}
 
 	@RequestMapping(value = "/cancellaAttivita/{id}", method = RequestMethod.GET)

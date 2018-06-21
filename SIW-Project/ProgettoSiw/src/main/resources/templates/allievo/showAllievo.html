@@ -35,7 +35,7 @@
 			Totale Importo Dovuto : € <span th:text="${allievo.importoDovuto}"></span>
 		</div>
 
-		<div>Lista delle Attivita: </div>
+		<div>Lista delle Attivita:</div>
 
 		<div id="showLista">
 			<div th:each="attivita : ${listaAttivita}">
@@ -43,14 +43,12 @@
 					th:text="${attivita.descrizione}"></span> Il <span
 					th:text="${attivita.dataAttivita}"></span> Dalle <span
 					th:text="${attivita.oraInizio}"></span> Alle <span
-					th:text="${attivita.oraFine}"></span> € <span
-					th:text="${attivita.prezzo}"></span>
+					th:text="${attivita.oraFine}"></span>
 				</a>
 			</div>
+			<br>
 		</div>
 	</div>
-	<br>
-	<br>
 	<form id="partecipa"
 		th:action="@{'/partecipaAttivita' + '/' + ${allievo.id}}" method="GET">
 		<button type="submit">Partecipa Nuova Attivita</button>

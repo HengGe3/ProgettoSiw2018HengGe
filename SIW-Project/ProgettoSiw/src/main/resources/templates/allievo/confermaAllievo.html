@@ -4,31 +4,40 @@
 <head>
 <title>Allievo</title>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
 </head>
 <body>
-	<div>
-		<h4 class="title">Dati Allievo</h4>
+	<div id="messaggio">
 		<div>
-			Nome : <span th:text="${allievo.nome}"></span>
+			<h4 class="title">Dati Allievo</h4>
+			<div>
+				Nome : <span th:text="${allievo.nome}"></span>
+			</div>
+			<div>
+				Cognome : <span th:text="${allievo.cognome}"></span>
+			</div>
+			<div>
+				Email : <span th:text="${allievo.email}"></span>
+			</div>
+			<div>
+				Telefono : <span th:text="${allievo.telefono}"></span>
+			</div>
+			<div>
+				Data di Nascita : <span th:text="${allievo.dataNascita}"></span>
+			</div>
+			<div>
+				Luogo di Nascita : <span th:text="${allievo.luogoNascita}"></span>
+			</div>
+			<br>
+			<form th:action="@{/saveAllievo}" method="POST">
+				<button type="submit">Salva Allievo</button>
+			</form>
+			<form th:action="@{/inserisciAllievo}">
+				<button type="submit">Cancella Registrazione</button>
+			</form>
+			<br>
 		</div>
-		<div>
-			Cognome : <span th:text="${allievo.cognome}"></span>
-		</div>
-		<div>
-			Email : <span th:text="${allievo.email}"></span>
-		</div>
-		<div>
-			Telefono : <span th:text="${allievo.telefono}"></span>
-		</div>
-		<div>
-			Data di Nascita : <span th:text="${allievo.dataNascita}"></span>
-		</div>
-		<div>
-			Luogo di Nascita : <span th:text="${allievo.luogoNascita}"></span>
-		</div>
-		<br>
-		<form th:action="@{/saveAllievo}" method="POST"><button type="submit">Salva Allievo</button></form>
-		<form th:action="@{/inserisciAllievo}"><button type="submit">Cancella Registrazione</button></form>
 	</div>
 </body>
 </html>

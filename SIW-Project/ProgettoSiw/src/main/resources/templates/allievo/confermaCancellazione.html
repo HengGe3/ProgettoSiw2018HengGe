@@ -4,11 +4,12 @@
 <head>
 <title>Cancellazione</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
+<link rel="stylesheet"
+	href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
 </head>
 <body>
 	<div id="messaggio">
-		<h4 class="title">Cancella Allievo</h4>
+		<h4 class="title">Cancella Allievo, Confermare?</h4>
 		<div>
 			Nome : <span th:text="${allievo.nome}"></span>
 		</div>
@@ -30,17 +31,16 @@
 		<p>Lista delle Attivita</p>
 		<div>
 			<div th:each="attivita : ${listaAttivita}">
-				<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}">
-					<span th:text="${attivita.descrizione}"></span> 
-					Il <span th:text="${attivita.dataAttivita}"></span>
-					Dalle <span th:text="${attivita.oraInizio}"></span> 
-					Alle <span th:text="${attivita.oraFine}"></span>
-					€  <span th:text="${attivita.prezzo}"></span>
-				</a></div>
+				<a th:href="@{'/findAttivitaId' + '/' + ${attivita.id}}"> <span
+					th:text="${attivita.descrizione}"></span> Il <span
+					th:text="${attivita.dataAttivita}"></span> Dalle <span
+					th:text="${attivita.oraInizio}"></span> Alle <span
+					th:text="${attivita.oraFine}"></span> € <span
+					th:text="${attivita.prezzo}"></span>
+				</a>
+			</div>
+			<br>
 		</div>
-		<br>
-		<br>
-		<br>
 		<div>
 			Totale Importo Dovuto : € <span th:text="${allievo.importoDovuto}"></span>
 		</div>
@@ -49,9 +49,10 @@
 			method="POST">
 			<button type="submit">Conferma Cancellazione</button>
 		</form>
-     <form th:action="@{/listaAllievi}">
-		<button  type="submit">Annulla Cancellazione</button>
-	</form>
+		<form th:action="@{/listaAllievi}">
+			<button type="submit">Annulla Cancellazione</button>
+		</form>
+		<br>
 	</div>
 </body>
 </html>

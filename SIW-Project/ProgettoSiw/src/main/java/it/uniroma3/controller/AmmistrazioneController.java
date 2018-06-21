@@ -13,6 +13,7 @@ import it.uniroma3.model.Allievo;
 import it.uniroma3.model.Attivita;
 import it.uniroma3.model.Partecipazione;
 import it.uniroma3.service.AllievoService;
+import it.uniroma3.service.AttivitaService;
 import it.uniroma3.service.CentroFormazioneService;
 import it.uniroma3.service.PartecipazioneService;
 
@@ -21,6 +22,9 @@ public class AmmistrazioneController {
 
 	@Autowired
 	private AllievoService allievoService;
+	
+	@Autowired
+	private AttivitaService attivitaService;
 
 	@Autowired
 	private PartecipazioneService partecipazioneService;
@@ -33,7 +37,7 @@ public class AmmistrazioneController {
 	@RequestMapping(value = "/statistiche", method = RequestMethod.GET)
 	public String statistiche(Model model) {
 		model.addAttribute("partecipantiCentri", this.cfs.numeroAllieviCentri());
-//		model.addAttribute("partecipantiAttivita", this.cfs.numeroAllieviAttivita());
+		model.addAttribute("partecipantiAttivita", this.attivitaService.numeroAllieviAttivita());
 		model.addAttribute("ricaviCentro", this.cfs.ricaviCentri());
 		return this.prefix + "statistiche";
 	}

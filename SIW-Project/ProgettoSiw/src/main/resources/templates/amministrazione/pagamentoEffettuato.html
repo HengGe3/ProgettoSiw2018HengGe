@@ -4,12 +4,25 @@
 <head>
 <title>Pagamento Effettuato</title>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
 </head>
 <body>
-	<p th:text="${pagato}"/>
-	<p th:text="${nonPagato}"/>
-	<form th:action="@{/homeGestione}" method="GET">
-		<button type="submit">Amministrazione</button>
-	</form>
+	<div id="messaggio">
+		<div>
+
+			<p th:text="${pagato}" />
+			<p th:text="${nonPagato}" />
+			<form id="home" th:action="@{/pagamento}" method="GET">
+				<button type="submit">Torna a Pagamento Allievo</button>
+			</form>
+			<form th:action="@{/homeGestione}" method="GET">
+				<button type="submit">Home Amministrazione</button>
+				<br>
+
+			</form>
+
+		</div>
+	</div>
 </body>
 </html>

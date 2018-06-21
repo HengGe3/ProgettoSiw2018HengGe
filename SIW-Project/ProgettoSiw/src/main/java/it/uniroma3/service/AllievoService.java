@@ -42,21 +42,6 @@ public class AllievoService {
 		return (List<Allievo>) this.allievoRepository.findAll();
 	}
 
-	public List<Allievo> getListaAllieviCentro() {
-
-		if (Progettosiw.getRsc().getCentroFormazione() == null)
-			return (List<Allievo>) this.allievoRepository.findAll();
-
-		List<Allievo> ai = (List<Allievo>) this.allievoRepository.findAll();
-		List<Allievo> listaAllievi = new ArrayList<>();
-		for (Allievo a : ai)
-			for (Partecipazione p : a.getListaPartecipazioni())
-				if (p.getAttivita().getCentroFormazione().equals(Progettosiw.getRsc().getCentroFormazione()))
-					if (!listaAllievi.contains(a))
-						listaAllievi.add(a);
-		return listaAllievi;
-	}
-
 	// Metodi Persistence
 	public Allievo save(Allievo allievo) {
 		return this.allievoRepository.save(allievo);
@@ -79,6 +64,30 @@ public class AllievoService {
 	}
 
 	// Metodi di supporto
+	public List<Allievo> getListaAllieviCentro() {
+
+		if (Progettosiw.getRsc().getCentroFormazione() == null)
+			return (List<Allievo>) this.allievoRepository.findAll();
+
+		List<Allievo> ai = (List<Allievo>) this.allievoRepository.findAll();
+		List<Allievo> listaAllievi = new ArrayList<>();
+		for (Allievo a : ai)
+			for (Partecipazione p : a.getListaPartecipazioni())
+				if (p.getAttivita().getCentroFormazione().equals(Progettosiw.getRsc().getCentroFormazione()))
+					if (!listaAllievi.contains(a))
+						listaAllievi.add(a);
+		return listaAllievi;
+	}
+	
+	// Per qualche motivo restituisce sempre una lista null e da errore
+	public List<Allievo> getListaAllieviNonPaganti() {
+		List<Allievo> listaAllievi = (List<Allievo>) this.allievoRepository.findAll();
+		// for (Allievo a : listaAllievi)
+		// if (a.getImportoDovuto() == 0)
+		// listaAllievi.remove(a);
+		return listaAllievi;
+	}
+	
 	public void aggiornaImporto(Allievo allievo) {
 		Optional<Allievo> a = this.allievoRepository.findById(allievo.getId());
 		double importo = 0;
@@ -109,15 +118,6 @@ public class AllievoService {
 	public boolean alreadyExists(Allievo allievo) {
 		Optional<Allievo> allievoTrovato = this.allievoRepository.findByEmail(allievo.getEmail());
 		return allievoTrovato.isPresent();
-	}
-
-	// Per qualche motivo restituisce sempre una lista null e da errore
-	public List<Allievo> getListaAllieviNonPaganti() {
-		List<Allievo> listaAllievi = (List<Allievo>) this.allievoRepository.findAll();
-		// for (Allievo a : listaAllievi)
-		// if (a.getImportoDovuto() == 0)
-		// listaAllievi.remove(a);
-		return listaAllievi;
 	}
 
 }

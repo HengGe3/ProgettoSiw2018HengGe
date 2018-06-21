@@ -245,7 +245,7 @@ a:hover {
 }
 
 .carousel-inner .form-inline .form-group button[type="getnow"]{
-	padding:20px 60px;
+	padding:10px 60px;
 	font-size:20px;
 	background:#fff;
 	color:#272727;
@@ -1096,3 +1096,22 @@ ul.social-network li a {
 .img-responsive{
 	top:70px;
 }
+
+#home{
+	position:relative;
+	padding:0% 0%;
+	font-size:20px;
+	background:#65AAF0;
+	color:#000000;
+	border-radius:0;
+	border-color:#000000;
+	text-transform:uppercase;
+	
+}
+
+#home button{
+	position:relative;
+	
+}
+
+

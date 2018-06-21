@@ -32,22 +32,18 @@ public class CentroFormazioneController {
 	@RequestMapping(value = "/findCentroFormazione", method = RequestMethod.GET)
 	public String cercaCentroFormazione(@RequestParam("nome") String nome, Model model) {
 
-		if (!nome.equals("") && nome != null) {
+		CentroFormazione centroFormazione = this.centroFormazioneService
+				.findByNome(this.centroFormazioneService.uploadString(nome));
 
-			CentroFormazione centroFormazione = this.centroFormazioneService
-					.findByNome(this.centroFormazioneService.uploadString(nome));
-
-			if (centroFormazione == null) {
-				model.addAttribute("notexists", "Centro Formazione non esiste");
-				return this.prefix + "findCentroFormazione";
-			} else {
-				model.addAttribute("centroFormazione", centroFormazione);
-				model.addAttribute("listaAttivita", centroFormazione.getListaAttivita());
-				return this.prefix + "showCentroFormazione";
-			}
+		if (centroFormazione == null) {
+			model.addAttribute("notexists", "Centro Formazione non esiste");
+			model.addAttribute("responsabile", Progettosiw.rsc);
+			model.addAttribute("listaCentriFormazione", this.centroFormazioneService.findAll());
+			return this.prefix + "gestioneCentroFormazione";
 		}
-		model.addAttribute("errorParam", "Inserisci Nome");
-		return this.prefix + "findCentroFormazione";
+		model.addAttribute("centroFormazione", centroFormazione);
+		model.addAttribute("listaAttivita", centroFormazione.getListaAttivita());
+		return this.prefix + "showCentroFormazione";
 	}
 
 	@RequestMapping("/homeCentroFormazione")

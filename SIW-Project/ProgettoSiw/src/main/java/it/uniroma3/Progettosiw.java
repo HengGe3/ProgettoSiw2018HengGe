@@ -34,7 +34,7 @@ public class Progettosiw {
 	private PartecipazioneService partecipazioneService;
 
 	@Autowired
-	private ResponsabileService r;
+	private ResponsabileService responsabileService;
 
 	@Autowired
 	private CentroFormazioneService CentroFormazioneService;
@@ -80,7 +80,7 @@ public class Progettosiw {
 		r.setPassword("cultura");
 		r.setRole("responsabile");
 		r.setCentroFormazione(cc);
-		this.r.save(r);
+		this.responsabileService.save(r);
 		
 		r = new Responsabile();
 		r.setNome("sport");
@@ -90,7 +90,7 @@ public class Progettosiw {
 		r.setPassword("sport");
 		r.setRole("responsabile");
 		r.setCentroFormazione(cs);
-		this.r.save(r);
+		this.responsabileService.save(r);
 		
 		r = new Responsabile();
 		r.setNome("arte");
@@ -100,7 +100,7 @@ public class Progettosiw {
 		r.setPassword("arte");
 		r.setRole("responsabile");
 		r.setCentroFormazione(ca);
-		this.r.save(r);
+		this.responsabileService.save(r);
 		
 		r = new Responsabile();
 		r.setNome("admin");
@@ -109,7 +109,7 @@ public class Progettosiw {
 		r.setUsername("admin");
 		r.setPassword("admin");
 		r.setRole("admin");
-		this.r.save(r);
+		this.responsabileService.save(r);
 		
 		Attivita robot = new Attivita();
 		robot.setDescrizione("Robot, Umaninoidi, E Cyborg");

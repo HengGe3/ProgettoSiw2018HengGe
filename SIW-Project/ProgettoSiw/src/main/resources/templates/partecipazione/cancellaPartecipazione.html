@@ -2,27 +2,36 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
+<title>Cancellazione</title>
 <meta charset="UTF-8">
-<title>Cancella Partecipazione</title>
+<link rel="stylesheet"
+	href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
 </head>
 <body>
-	<h4>Cancella Una Partecipazione dell' Utente</h4>
-	ID Allievo : <span th:text="${allievo.id}"/></span><br>
-	<span th:text="${allievo.nome}"></span>
-	<span th:text="${allievo.cognome}"></span>
-	<span th:text="${allievo.dataNascita}"></span><br>
-	<p>Scegli tra le seguenti opzioni</p>
-	<div>
-		<div th:each="attivita : ${listaAttivita}">
-			<a th:href="@{'/confermaCancellazioneId' + '/' + ${attivita.id}}">
-				<span th:text="${attivita.descrizione}"></span> 
-				Il <span th:text="${attivita.dataAttivita}"></span>
-				Dalle <span th:text="${attivita.oraInizio}"></span> 
-				Alle <span th:text="${attivita.oraFine}"></span>
-				€  <span th:text="${attivita.prezzo}"></span>
-			</a></div>
+	<div id="messaggio">
+		<div>
+			<h4>Cancella Una Partecipazione dell' Utente</h4>
+			ID Allievo : <span th:text="${allievo.id}" /></span><br> <span
+				th:text="${allievo.nome}"></span> <span th:text="${allievo.cognome}"></span>
+			<span th:text="${allievo.dataNascita}"></span><br>
+			<p>Scegli tra le seguenti Attivita da Cancellare</p>
+			<div>
+				<div th:each="attivita : ${listaAttivita}">
+					<a th:href="@{'/confermaCancellazioneId' + '/' + ${attivita.id}}">
+						<span th:text="${attivita.descrizione}"></span> Il <span
+						th:text="${attivita.dataAttivita}"></span> Dalle <span
+						th:text="${attivita.oraInizio}"></span> Alle <span
+						th:text="${attivita.oraFine}"></span> € <span
+						th:text="${attivita.prezzo}"></span>
+					</a>
+				</div>
+			</div>
+			<br>
+			<form th:action="@{/homeGestione}" method="GET">
+				<button type="submit">Torna a Gestione Allievo</button>
+			</form>
+			<br>
+		</div>
 	</div>
-	<br>
-	<form th:action="@{/homeAllievo}" method="GET"><button type="submit">Torna a Gestione Allievo</button></form>
 </body>
 </html>

@@ -47,12 +47,6 @@ public class AllievoController {
 		return this.prefix + "showAllievo";
 	}
 
-	@RequestMapping("/homeAllievo")
-	public String homeAllievo(Model model) {
-		model.addAttribute("responsabile", Progettosiw.getRsc());
-		return this.prefix + "gestioneAllievi";
-	}
-
 	public String allievoForm(Model model) {
 		model.addAttribute("responsabile", Progettosiw.getRsc());
 		return this.prefix + "allievoForm";
@@ -98,7 +92,7 @@ public class AllievoController {
 	@RequestMapping("/findAllievo")
 	public String findAllievo(@RequestParam("email") String email, Model model) {
 		if (!email.equals("") && email != null) {
-			Allievo allievo = this.allievoService.findByEmail(email.toLowerCase());
+			Allievo allievo = this.allievoService.findByEmail(email);
 			if (allievo == null) {
 				model.addAttribute("notexists", "Allievo non esiste");
 				return listaAllievi(model);

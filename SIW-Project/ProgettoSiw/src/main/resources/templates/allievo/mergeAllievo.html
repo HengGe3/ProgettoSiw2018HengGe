@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Modifica Allievo</title>
+<meta charset="UTF-8">
+		<link rel="stylesheet" href="/stylesheets/stylesheetFormallievo.css" type="text/css" />
+	</head>
+	<body>
+	 <div id="inizio">
+		<h1 class="noiscrizione">Modifica i dati dell' Allievo :</h1>
+       </div>
+       <form id="Persone" th:action="@{'/updateAllievo' + '/' + ${allievo.id}}"
+		method="POST" th:object="${allievo}">
+          
+          <!--Genera la maschera con i campi di inserimento dei dati di accesso di autore -->
+          <fieldset>
+			<p th:text="${exists}"></p>
+            <input id="nome" type="text" th:field="*{nome}" placeholder="Nome" required><br>
+            
+            <input id="cognome" type="text" th:field="*{cognome}" placeholder="Cognome" required><br>
+            
+            <input id="data" type="date" th:field="*{dataNascita}" placeholder="Data di nascita" required><br>
+            
+            <input id="luogo" type="text" th:field="*{luogoNascita}" placeholder="Luogo di nascita" required><br>
+            
+            <input id="email" type="text" th:field="*{email}" placeholder="Email" required><br>
+            
+            <input id="telefono" type="text" th:field="*{telefono}" placeholder="Telefono" required><br>
+            
+            <button id="email" class="button" type="submit">Salva Modifiche</button>
+            
+          </fieldset>
+          
+         </form>
+     
+  
+  	 <div id="fine">
+  	 
+      	    
+       </div>
+	</body>
+</html>

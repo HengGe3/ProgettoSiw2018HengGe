@@ -2,12 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<title>Attivita</title>
+<title>Cancellazione</title>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="/stylesheets/stylesheetConfermaCancellazione.css" type="text/css" />
 </head>
 <body>
-	<div>
-		<h4 class="title">Dati Attivita</h4>
+	<div id="messaggio">
+		<h4 class="title">Cancella Attivita, Confermare?</h4>
 		<div>
 			Descrizione : <span th:text="${attivita.descrizione}"></span>
 		</div>
@@ -15,7 +17,7 @@
 			Prezzo : <span th:text="${attivita.prezzo}"></span>
 		</div>
 		<div>
-			Data : <span th:text="${attivita.dataAttivita}"></span>
+			Data Attivita : <span th:text="${attivita.dataAttivita}"></span>
 		</div>
 		<div>
 			Ora Inizio : <span th:text="${attivita.oraInizio}"></span>
@@ -26,24 +28,24 @@
 		<div>
 			Centro Formazione : <span th:text="${attivita.centroFormazione}"></span>
 		</div>
-		<p>Allievi che vi partecipano</p>
+		<p>Lista Degli Allievi che vi partecipano</p>
 		<div>
-			<span>Nome : </span>
-		</div>
-		<div>
-			<div th:each="attivita : ${listaAllievi}">
-				<a th:href="@{'/findattivitaId' + '/' + ${attivita.id}}"> <span
-					th:text="${attivita.nome}"></span> <span
-					th:text="${attivita.cognome}"></span>
+			<div th:each="allievo : ${listaAllievi}">
+				<a th:href="@{'/findAllievoId' + '/' + ${allievo.id}}"> <span
+					th:text="${allievo.nome}"></span> <span
+					th:text="${allievo.cognome}"></span>
 				</a>
+			</div>
+			<br>
 		</div>
-		<br>
-		<form th:action="@{'/deleteAttivita' + '/' + ${attivita.id}}" method="POST">
+		<form th:action="@{'/deleteAttivita' + '/' + ${attivita.id}}"
+			method="POST">
 			<button type="submit">Conferma Cancellazione</button>
 		</form>
-		<form th:action="@{/homeGestione}">
+		<form th:action="@{/listaAttivita}">
 			<button type="submit">Annulla Cancellazione</button>
 		</form>
+		<br>
 	</div>
 </body>
 </html>

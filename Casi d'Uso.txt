@@ -1,8 +1,29 @@
 Progetto Siw 2017 - 2018
 
+Funzionamento :
+
+Account disponibili per il Login :
+
+	username : admin
+	password : admin
+	
+	username : sport
+	password : sport
+
+	username : cultura
+	password : cultura
+
+	username : arte
+	password : arte
+
+Ognuno di questi account accede in una pagina html diversa
+Per l' Amministratore oltre a avere le stesse funzioni dei Responsabili,
+ha anche, esclusiva,  la possibilità di accedere alle statistiche (CASO D' USO 5) e modifiche dei vari Centri Formazione (CASO D'USO 4)
+	(non abbiamo implementato la ceazione e cancellazione di tali centri per reputati sbagliati)
+Ogni Responsabile che accede al sistema vedrà solamente le cose di sua competenza (Lista delle attivita e Allievi del suo centro)
+Se è il direttore allora avrà la visione completa dalle informazioni disponibili all' interno dell' Azienda.
+
 PROGETTO:
-Se una persona si iscrive ad un centro,se è iscritto ad un altro centro,le sue credenziali vengono recuperate.
-Due utenti:responsabili del centro,gestore del centro(non allievo).
 
 	 UC 1 : Gestione Allievo - Attore primario: Responsabile Centro E/O Direttore
 		1. Un Allievo si reca per la prima volta ad un Centro e richiede l' iscrizione.
@@ -30,7 +51,7 @@ Due utenti:responsabili del centro,gestore del centro(non allievo).
 		3. Il Direttore accede al sistema e puo cancellare un' Attività
 
 	UC 4 : Gestione Centri Formazione Azienda - Attore Primario : Direttore
-		2. Il Direttore accede al sistema e apporta modifiche a un Centro Formazione
+		1. Il Direttore accede al sistema e apporta modifiche a un Centro Formazione
 
 	UC 5 : Gestione Rendimento Azienda - Attore Primario : Direttore
 		1. Viene stampato per ogni Centro Formazione il numero di partecipanti

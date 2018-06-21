@@ -1,0 +1,53 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Inserimento Attivita</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="stylesheets/stylesheetFormAllievo.css"
+	type="text/css" />
+</head>
+<body>
+	<div id="inizio">
+		<h1 class="noiscrizione">Registra Nuova Attivita</h1>
+		<p th:text="${exists}"></p>
+	</div>
+	<!-- Genera il form con i campi di inserimento dei dati per l'iscrizione di un nuovo Allievo-->
+	<form id="Persone" th:action="@{/confermaAttivita}" method="POST"
+		th:object="${attivita}">
+
+		<!--Genera la maschera con i campi di inserimento dei dati di accesso di autore -->
+		<fieldset>
+
+			<input id="nome" type="text" th:field="*{descrizione}" placeholder="Descrizione" required><br>
+			
+			<input id="cognome" type="number" th:field="*{prezzo}" placeholder="Prezzo" required><br>
+			
+			<input id="data" type="date" th:field="*{dataAttivita}" placeholder="Data Attivita" required><br>
+
+			<input id="data" type="time" th:field="*{oraInizio}" placeholder="oraInizio" required><br>
+			
+			<input id="data" type="time" th:field="*{oraFine}" placeholder="oraFine" required><br>
+			
+			<!-- <select th:field = "*{centroFormazione}">
+				<option selected = "selected" th:value = "null"> -- Seleziona un Centro Formazione -- </option>
+				<option th:each = "centroFormazione : ${listaCentri}" th:text = "|${centroFormazione.nome}|" th:value = "${centroFormazione}"></option>
+			</select> -->
+
+			<button id="email" class="button" type="submit">Registra Attivita</button>
+
+		</fieldset>
+
+	</form>
+	<form id="back" th:action="@{/homeGestione}">
+		<button type="submit">Home</button>
+	</form>
+
+	<div id="fine">
+
+		<!-- nota per regolare la partecipazione -->
+		<p>Questi dati devono essere compilati per registrare un' Attivtia
+		</p>
+	</div>
+</body>
+</html>

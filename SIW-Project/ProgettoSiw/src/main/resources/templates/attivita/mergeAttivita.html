@@ -4,37 +4,36 @@
 <head>
 <title>Modifica Attivita</title>
 <meta charset="UTF-8">
-		<link rel="stylesheet" href="/stylesheets/stylesheetFormallievo.css" type="text/css" />
-	</head>
-	<body>
-	 <div id="inizio">
+<link rel="stylesheet" href="/stylesheets/stylesheetFormallievo.css"
+	type="text/css" />
+</head>
+<body>
+	<div id="inizio">
 		<h1 class="noiscrizione">Modifica i dati dell' Attivita:</h1>
-       </div>
-       <form id="Persone" th:action="@{'/updateAttivita' + '/' + ${attivita.id}}"
-		method="POST" th:object="${attivita}">
-          
-          <!--Genera la maschera con i campi di inserimento dei dati di accesso di autore -->
-          <fieldset>
-			<input id="nome" type="text" th:field="*{descrizione}" placeholder="Descrizione" required><br>
-            
-            <input id="cognome" type="number" th:field="*{prezzo}" placeholder="Prezzo" required><br>
-            
-            <input id="data" type="date" th:field="*{dataAttivita}" placeholder="Data Attivita" required><br>
-            
-            <input id="data" type="time" th:field="*{oraInizio}" placeholder="oraInizio" required><br>
-            
-            <input id="data" type="time" th:field="*{oraFine}" placeholder="oraFine" required><br>
-            
-            <button id="email" class="button" type="submit">Salva Modifiche</button>
-            
-          </fieldset>
-          
-         </form>
-     
-  
-  	 <div id="fine">
-  	 
-      	    
-       </div>
-	</body>
+	</div>
+	<form id="Persone"
+		th:action="@{'/updateAttivita' + '/' + ${attivita.id}}" method="POST"
+		th:object="${attivita}">
+
+		<!--Genera la maschera con i campi di inserimento dei dati di accesso di autore -->
+		<fieldset>
+			<input id="nome" type="text" th:field="*{descrizione}" placeholder="Descrizione" required><br> 
+			
+			<input id="cognome" type="number" th:field="*{prezzo}" placeholder="Prezzo" required><br> 
+			
+			<input id="data" type="date" th:field="*{dataAttivita}" placeholder="Data Attivita" required><br>
+
+			<input id="data" type="time" th:field="*{oraInizio}" placeholder="oraInizio" required><br> 
+			
+			<input id="data" type="time" th:field="*{oraFine}" placeholder="oraFine" required><br>
+
+			<button id="email" class="button" type="submit">Salva Modifiche</button>
+
+		</fieldset>
+
+	</form>
+
+
+	<div id="fine"></div>
+</body>
 </html>

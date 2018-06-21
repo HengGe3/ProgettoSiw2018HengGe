@@ -1,54 +1,165 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Statistiche</title>
+
+<!-- Bootstrap -->
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+<link rel="stylesheet" href="/stylesheets/animate.css">
+<link href="/stylesheets/animate.min.css" rel="stylesheet">
+<link href="/stylesheets/style.css" rel="stylesheet" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    	th, td {
+    		padding: 0px 30px
+    	}
+    </style>
 </head>
 <body>
-	<h4>Statistiche Azienda</h4>
-	<br>
-	<table>
-		<tr>
-			<th>Centro Formazione</th>
-			<th>Numero Allievi</th>
-		</tr>
-		<tr th:each="centroFormazione : ${partecipantiCentri}">
-			<td th:text="'Centro ' + ${centroFormazione.key.nome}"></td>
-			<td th:text="${centroFormazione.value}"></td>
-		</tr>
-	</table>
-	<br>
-	<table>
-		<tr>
-			<th>Centro Formazione</th>
-			<th>Ricevi Per Centro</th>
-		</tr>
-		<tr th:each="centroFormazione : ${ricaviCentro}">
-			<td th:text="'Centro ' + ${centroFormazione.key.nome}"></td>
-			<td th:text="'€ : ' + ${centroFormazione.value}"></td>
-		</tr>
-	</table>
-	<br>
-	<table>
-		<tr>
-			<th>Attivita</th>
-			<th>Numero Allievi</th>
-		</tr>
-		<tr th:each="attivita : ${partecipantiAttivita}">
-			<td th:text="${attivita.key.descrizione}"></td>
-			<td th:text="'	' + ${attivita.value}"></td>
-		</tr>
-	</table>
-	<br>
-	<form th:action="@{/homeGestione}" method="GET">
-		<button type="submit">Amministrazione</button>
-	</form>
-	<!-- <div>
-		<div th:each="centroFormazione : ${partecipantiCentri}">
-			Centro : <span th:text="${centroFormazione.key.nome}"></span> <span
-				th:text="${centroFormazione.value}"></span>
+	<header id="header"> </header>
+	<!--/header-->
+
+	<div class="slider">
+		<div id="about-slider">
+			<div id="carousel-slider" class="carousel slide">
+
+
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="stylesheets/statistiche.jpg"
+							style="top: 35px; left: 170px; width: 2000px; height: 650px"
+							class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<div class="wow fadeInUp">
+								<h2>
+									<span>Le tue Statistiche</span>
+								</h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp"></div>
+							</div>
+							<div class="wow fadeInUp">
+								<form class="form-inline">
+
+									<div class="form-group"></div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+			</div>
+			<!--/#carousel-slider-->
 		</div>
-	</div> -->
+		<!--/#about-slider-->
+	</div>
+	<!--/#slider-->
+
+	<div class="about">
+		<div class="container">
+			<div class="text-center">
+				<h2>Le tue statistiche ora!</h2>
+				<div class="col-md-10 col-md-offset-1"></div>
+
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="services">
+		<div class="container">
+
+			<div id="scelta">
+				<table>
+					<tr>
+						<th><font color="black">Centro Formazione</font></th>
+
+						<th><font color="black">Numero Allievi</font></th>
+					</tr>
+					<tr style="color: black"
+						th:each="centroFormazione : ${partecipantiCentri}">
+						<td th:text="'Centro ' + ${centroFormazione.key.nome}"></td>
+						<td th:text="${centroFormazione.value}"></td>
+					</tr>
+				</table>
+				<br>
+				<table>
+					<tr>
+						<th><font color="black">Centro Formazione</font></th>
+						<th><font color="black">Ricevi Per Centro</font></th>
+					</tr>
+					<tr style="color: black"
+						th:each="centroFormazione : ${ricaviCentro}">
+						<td th:text="'Centro ' + ${centroFormazione.key.nome}"></td>
+						<td th:text="'€ : ' + ${centroFormazione.value}"></td>
+					</tr>
+				</table>
+				<br>
+				<table>
+					<tr>
+						<th><font color="black">Attivita</font></th>
+						<th><font color="black">Numero Allievi</font></th>
+					</tr>
+					<tr style="color: black"
+						th:each="attivita : ${partecipantiAttivita}">
+						<td th:text="${attivita.key.descrizione}"></td>
+						<td th:text="'	' + ${attivita.value}"></td>
+					</tr>
+				</table>
+				<br>
+				<form th:action="@{/homeGestione}" method="GET">
+					<button type="submit">
+						<font color="black">Amministrazione</font>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<section class="action">
+		<div class="container">
+
+			<div class="left-text hidden-xs">
+				<h4>Le nostre Attività sono gestite con cura e attenzione,
+					senza tralasciare nulla al caso.</h4>
+				<p>
+					<em>I nostri Allievi sono preparati secondo tecniche studiate
+						da esperti.</em><br> <br>Studiando a contatto con esperti,
+					abbiamo definito programmi e progetti...
+				</p>
+			</div>
+			<div class="right-image hidden-xs"></div>
+		</div>
+	</section>
+
+
+
+	<footer>
+
+		<form id="home" th:action="@{/homeGestione}">
+			<button type="submit">Home</button>
+		</form>
+
+	</footer>
+
+
+
+
 </body>
 </html>

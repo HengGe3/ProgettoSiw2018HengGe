@@ -20,6 +20,7 @@ import it.uniroma3.Progettosiw;
 import it.uniroma3.controller.validator.AttivitaValidator;
 import it.uniroma3.model.Attivita;
 import it.uniroma3.service.AttivitaService;
+import it.uniroma3.service.CentroFormazioneService;
 import it.uniroma3.service.PartecipazioneService;
 
 @Controller
@@ -30,6 +31,9 @@ public class AttivitaController {
 
 	@Autowired
 	private PartecipazioneService partecipazioneService;
+
+	@Autowired
+	private CentroFormazioneService centroFormazioneService;
 
 	@Autowired
 	private AttivitaValidator validator;
@@ -56,8 +60,8 @@ public class AttivitaController {
 	}
 
 	@RequestMapping(value = "/confermaAttivita", method = RequestMethod.POST)
-	public String confermaAttivita(@Valid @ModelAttribute("attivita") Attivita attivita, Model model,
-			BindingResult bindingResult) {
+	public String confermaAttivita(@Valid @ModelAttribute("attivita") Attivita attivita, BindingResult bindingResult,
+			Model model) {
 		this.validator.validate(attivita, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.attivitaService.uploadParametri(attivita);
@@ -66,7 +70,8 @@ public class AttivitaController {
 				return attivitaForm();
 			} else {
 				this.attivita = attivita;
-				this.attivita.setCentroFormazione(Progettosiw.getRsc().getCentroFormazione());
+				if (Progettosiw.getRsc().getCentroFormazione() != null)
+					this.attivita.setCentroFormazione(Progettosiw.getRsc().getCentroFormazione());
 				model.addAttribute("attivita", attivita);
 				return this.prefix + "confermaAttivita";
 			}

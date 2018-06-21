@@ -1,38 +1,87 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
-<head>
-<title>Gestione Centri Formazione</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-	<h4 class="title">Gestione Centri Formazione</h4>
-	Sei loggato come
-	<div>
-		Username : <span th:text="${responsabile.username}"></span>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Centri Formazione</title>
+
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/animate.css">
+	<link href="/stylesheets/animate.min.css" rel="stylesheet"> 
+	<link href="/stylesheets/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>	
+	<header id="header">
+    </header><!--/header-->	
+	<div class="slider">		
+		<div id="about-slider">
+			<div id="carousel-slider" class="carousel slide" >
+				
+				<div class="carousel-inner">
+					<div class="item active">						
+						<img src="stylesheets/cerca3.jpg" class="img-responsive" alt=""> 
+						<div class="carousel-caption">
+							<div class="wow fadeInUp"  >								
+								<h2><span>Cerca tra i nostri Centri!</span></h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" >								
+									
+								</div>
+							</div>
+							<div class="wow fadeInUp" >								
+								<form class="form-inline">
+									
+									<div class="form-group">
+										
+									</div>
+								</form>
+							</div>
+						</div>
+				    </div>
+			
+				    
+				    
+				</div>
+				
+				
+			</div> <!--/#carousel-slider-->
+		</div><!--/#about-slider-->
+	</div><!--/#slider-->
+	
+	<div class="about">
+		<div class="container">
+			<div class="text-center">
+				<h2>Scegli un Centro e Modifica / Aggiorna! </h2>
+				<div class="col-md-10 col-md-offset-1">
+					<h4>Qui di seguito troverai una lista dei nostri Centri: scegline uno, 
+					   selezionalo, inizia la sua gestione. In alternativa usa
+					   il campo di ricerca per Nome in fondo alla pagina.</h4>
+				</div>
+				
+			</div>	
+		</div>			
 	</div>
-	<form th:action="@{/logout}">
-		<button type="submit">Logout</button>
-	</form>
-	<br>
-	<h4 class="title">Cerca Centro Formazione</h4>
-	<p th:text="${notexists}"></p>
-	<form th:action="@{/findCentroFormazione}" method="GET">
+	<hr>
+	
+	<div class="services">
+		<div class="container">
+			<div class="text-center">
+				<h2>I nostri Centri:</h2>
+			</div>
+			<div>
 		<table>
-			<tr>
-				<td>Nome :</td>
-				<td><input type="text" name="nome" required />
-			</tr>
-			<tr>
-				<td><button type="submit">Cerca Centro Formazione</button></td>
-			</tr>
-		</table>
-	</form>
-	<div>
-		<table>
-			<tr>
-				<th>Nome :</th>
-			</tr>
 			<tr th:each="centroFormazione : ${listaCentriFormazione}">
 				<td><a
 					th:href="@{'/findCentroFormazioneId' + '/' + ${centroFormazione.id}}">
@@ -42,8 +91,53 @@
 			</tr>
 		</table>
 	</div>
-	<form th:action="@{/homeGestione}" method="GET">
+			
+		</div>			
+	</div>
+	
+	<section class="action">
+		<div class="container">
+		
+			<div class="left-text hidden-xs">
+				<h4>I nostri Centri sono organizzati secondo quegli standard qualitativi che ci sono stati tramandati</h4>
+				<p><em>I nostri Allievi possono trovare e scoprire un'ambiente aperto e pieno di Attività formative</em><br><br>Studiando a contatto con esperti, abbiamo definito programmi e progetti...</p>
+			</div>
+			<div class="right-image hidden-xs"></div>
+		</div>
+	</section>
+	
+
+		
+	<footer>
+	
+	
+		<div id="findallievo">
+	 <div id="inizio">
+		<h1 class="title">Ricerca un Centro:</h1>
+		<p th:text="${notexists}"></p>
+	</div>
+
+
+	
+		<form id="Find" th:action="@{/findCentroFormazione}" method="GET">
+          
+          
+          <fieldset>
+			<div>Nome :</div>
+            <input id="email" type="text" name="nome" /><span
+					th:text=" ${errorParam}"></span><br>
+            <span  th:text="${notexists}"></span>
+		<button id="email" class="button" type="submit" >Cerca Centro Formazione</button>
+            
+          </fieldset>
+			
+	</form>		
+	<form id="home" th:action="@{/homeGestione}">
 		<button type="submit">Home</button>
 	</form>
-</body>
+	</div>
+			
+	</footer>
+	
+  </body>
 </html>

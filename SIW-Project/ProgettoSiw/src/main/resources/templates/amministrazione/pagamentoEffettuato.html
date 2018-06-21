@@ -10,7 +10,6 @@
 <body>
 	<div id="messaggio">
 		<div>
-
 			<p th:text="${pagato}" />
 			<p th:text="${nonPagato}" />
 			<form id="home" th:action="@{/pagamento}" method="GET">
@@ -19,10 +18,9 @@
 			<form th:action="@{/homeGestione}" method="GET">
 				<button type="submit">Home Amministrazione</button>
 				<br>
-
 			</form>
-
 		</div>
+		<br>
 	</div>
 </body>
 </html>

@@ -2,47 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<title>Modifica Centri Formazione</title>
+<title>Modifica Centro</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/stylesheets/stylesheetFormallievo.css"
+	type="text/css" />
 </head>
 <body>
-	<div>
-		<h4 class="title">Centro Formazione</h4>
+	<div id="inizio">
+		<h1 class="noiscrizione">Modifica i dati del Centro Formazione :</h1>
 	</div>
-	<form th:action="@{'/updateCentroFormazione' + '/' + ${centroFormazione.id}}" method="POST" th:object="${centroFormazione}">
-		<table>
-			<tr>
-				<td>Nome :</td>
-				<td><input type="text" th:field="*{nome}"/></td>
-				<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
-			</tr>
-			<tr>
-				<td>Indirizzo :</td>
-				<td><input type="text" th:field="*{indirizzo}"/></td>
-				<td th:if="${#fields.hasErrors('indirizzo')}" th:errors="*{indirizzo}"></td>
-			</tr>
+	<form id="Persone"
+		th:action="@{'/updateCentroFormazione' + '/' + ${centroFormazione.id}}"
+		method="POST" th:object="${centroFormazione}">
 
-			<tr>
-				<td>Email :</td>
-				<td><input type="text" th:field="*{email}"/></td>
-				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
-			</tr>
+		<!--Genera la maschera con i campi di inserimento dei dati di accesso di autore -->
+		<fieldset>
+			<input id="nome" type="text" th:field="*{nome}" placeholder="Nome"
+				required><br> 
+				<input id="cognome" type="text"
+				th:field="*{indirizzo}" placeholder="Indirizzo" required><br>
 
-			<tr>
-				<td>Telefono :</td>
-				<td><input type="text" th:field="*{telefono}"/></td>
-				<td th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></td>
-			</tr>
+			<input id="cognome" type="text" th:field="*{email}" placeholder="Email"
+				required><br> <input id="data" type="text"
+				th:field="*{telefono}" placeholder="Telefono" required><br>
 
-			<tr>
-				<td>Capienza Massima :</td>
-				<td><input type="number" th:field="*{capienzaMassima}"/></td>
-				<td th:if="${#fields.hasErrors('capienzaMassima')}" th:errors="*{capienzaMassima}"></td>
-			</tr>
-			<tr>
-				<td><button type="submit">Update CentroFormazione</button></td>
-			</tr>
-		</table>
+			<input id="data" type="text" th:field="*{capienzaMassima}"
+				placeholder="Capienza Massima" required><br>
+
+			<button id="email" class="button" type="submit">Salva
+				Modifiche</button>
+
+		</fieldset>
+
 	</form>
+
+
+	<div id="fine"></div>
 </body>
 </html>

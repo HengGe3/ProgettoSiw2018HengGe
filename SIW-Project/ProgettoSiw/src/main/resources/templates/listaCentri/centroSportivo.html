@@ -17,8 +17,8 @@ HomePage del Responsabile: qui il responsabile può scegliere se gestire le atti
 <link
 	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
 	rel="stylesheet" />
-<link href="/stylesheets/stylesheetHomeResponsabile.css" rel="stylesheet"
-	type="text/css" media="all" />
+<link href="/stylesheets/stylesheetHomeResponsabile.css"
+	rel="stylesheet" type="text/css" media="all" />
 <link href="/stylesheets/fontsHomeResponsabile.css" rel="stylesheet"
 	type="text/css" media="all" />
 
@@ -36,16 +36,16 @@ HomePage del Responsabile: qui il responsabile può scegliere se gestire le atti
 				</h1>
 			</div>
 			<div id="menu">
-			 
+
 				<ul>
 					<li>Sei loggato come <span th:text="${responsabile.username}"></span>
-   				</ul>
+				</ul>
 				<ul>
 					<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 				</ul>
 				<ul>
-					<li><a th:href="@{/logout}" accesskey="5" title="">Torna alla pagina
-							di Login</a></li>
+					<li><a th:href="@{/logout}" accesskey="5" title="">Torna
+							alla pagina di Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -66,22 +66,39 @@ HomePage del Responsabile: qui il responsabile può scegliere se gestire le atti
 				<div class="ebox1">
 					<span class="fa fa-pagelines"></span>
 					<div class="title">
-						<h2>Gestisci Allievi</h2>...
-						
-							 <form th:action="@{/inserisciAllievo}"><button type="submit">Iscrivi Allievo</button></form>...
-							 <form th:action="@{/listaAllievi}"><button type="submit">Cerca dati Allievo/Lista Allievi del Centro</button></form>...
-							 <form th:action="@{/pagamento}"><button type="submit">Pagamenti</button></form> 
-							 
+						<h2>Gestisci Allievi</h2>
+						...
+
+						<form th:action="@{/inserisciAllievo}">
+							<button type="submit">Iscrivi Allievo</button>
+						</form>
+						...
+						<form th:action="@{/listaAllievi}">
+							<button type="submit">Cerca dati Allievo/Lista Allievi
+								del Centro</button>
+						</form>
+						...
+						<form th:action="@{/pagamento}">
+							<button type="submit">Pagamenti</button>
+						</form>
+
 					</div>
 				</div>
 				<!-- Sezione per la gestione delle attività del centro. -->
 				<div class="ebox2">
 					<span class="fa fa-anchor"></span>
 					<div class="title">
-						<h2>Gestisci Attività</h2>...
-						
-							<form  th:action="@{/inserisciAttivita}"><button type="submit">Inserisci una nuova Attività </button></form>...
-							<form th:action="@{/listaAttivita}"><button type="submit">Cerca una Attività/Lista Attività del Centro. </button></form>
+						<h2>Gestisci Attività</h2>
+						...
+
+						<form th:action="@{/inserisciAttivita}">
+							<button type="submit">Inserisci una nuova Attività</button>
+						</form>
+						...
+						<form th:action="@{/listaAttivita}">
+							<button type="submit">Cerca una Attività/Lista Attività
+								del Centro.</button>
+						</form>
 					</div>
 
 				</div>
